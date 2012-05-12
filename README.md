@@ -50,7 +50,8 @@ Bromine is composed of 3 basic components:
 
 1. `Bromine.Test` - A test suit, which manages a stack of steps to execute
 2. `Bromine.Tester` - A test runner
-3. Event dispatching utilities, such as `Bromine.fireEvent` and `Bromine.fireEventWithDelay`.
+3. `Bromine.Reporter` - A simple Reporter object for you to extend
+4. Event dispatching utilities, such as `Bromine.fireEvent` and `Bromine.fireEventWithDelay`.
 
 In the example above, we start by creating a Test-runner. We then register a Test suit on top of it. 
 Inside the test suite, we use `fireEventWithDelay` to execute a 'click' event, and wait before executing the next function in the stack (default is 500ms). The wait is becuase many times we want to wait for a transition or an effect to finish running.
@@ -77,12 +78,11 @@ Each function in the test stack has the following methods at it's disposal:
 
 In addition, each function has access to 3 methods to contol the flow of the test - `prev`, `current`, and `next`. These can be called and passed around.
 
-As of yet, Bromine does not come bundled with a Reporter, but creating one should be very easy using the Tester events.
-
 ##Bromine.Tester
 The test runner is used to register suites, manage their dependencies, and execute them. It has the following methods:
 
 * registerTest(name, options)
+* registerReporter(reporter)
 * run()
 * reset()
 
@@ -98,3 +98,17 @@ The first 3 pass as arguments the test name and the test instance:
     tester.addEvent('testDone', function(e){
         console.log('test ' + e.name +'passed', e.test.results);   
     });
+
+##Bromine.Reporter
+The framework supplies a simple reporter for you to use. The reporter can either be extended, or you can override it's callbacks.
+
+Usage:
+
+    var reporter = new Bromine.Reporter;
+
+    reporter.testStart = function(name, test){};
+    reporter.testDone  = function(name, results, test){};
+    reporter.testFail  = function(name, results, test){};
+    reporter.done = function(results){};
+
+    tester.registerReporter(reporter);

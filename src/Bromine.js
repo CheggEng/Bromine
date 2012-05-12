@@ -1,4 +1,5 @@
 !function(ns, utils){
+    var dom_events = 'addEventListener' in document;
     /**
      * A Test Instance
      *
@@ -61,7 +62,9 @@
             if (state === false){
                 return this.fail(msg);
             }else{
-                this.fireEvent('done:latched');
+                this.fireEvent('done:latched',{
+                    results : this.results
+                });
             }
 
             this.destroy();
@@ -214,7 +217,7 @@
             var stack = this.depends[e.dispatcher.name],
                 i, name;
 
-            this.fireEvent('testDone',{name : e.dispatcher.name, test: e.dispatcher});
+            this.fireEvent('testDone',{name : e.dispatcher.name, test: e.dispatcher, results : e.args.results});
 
             for (i=0; name = stack[i]; i++){
                 if (!name) continue;
@@ -230,7 +233,7 @@
             var stack = this.depends[e.dispatcher.name],
                 i, name;
 
-            this.fireEvent('testFail',{name : e.dispatcher.name, test: e.dispatcher});
+            this.fireEvent('testFail',{name : e.dispatcher.name, test: e.dispatcher, results : e.args.results});
 
             for (i=0; name = stack[i]; i++){
                 this.tests[name].done(false, "dependancy failed: "+name);
@@ -238,6 +241,16 @@
 
             this.results[e.dispatcher.name] = e.dispatcher.results;
             this.next();
+        },
+        registerReporter : function(r){
+            var target = dom_events ? r : r.handleEvent;
+
+            this.addEvents({
+                testStart : target,
+                testDone  : target,
+                testFail  : target,
+                done      : target
+            });
         }
     };
 

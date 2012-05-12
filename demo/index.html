@@ -2,27 +2,80 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Bromine Example</title>
     <style type="text/css">
+        body{
+            width:900px;
+            margin: 20px auto;
+            border:1px solid #fff;
+            border-radius:20px;
+            background:#fff;
+            padding:30px;
+        }
+
+        html{
+            background:#aae;
+        }
+        a{
+            display:block;
+        }
+        h1{
+            text-align:center;
+        }
         .clicked {
             color : #fed
+        }
+
+        table{
+            width:500px;
+            margin:0 auto;
+        }
+
+        td{
+            text-align:center;
+        }
+
+        .X {
+            background-color:#F00;
+        }
+
+        .V {
+            background-color:#0F0;
         }
     </style>
 </head>
 <body>
+    <h1>Bromine Demo</h1>
 	<a href="#bla1">bla1</a><a href="#bla2">bla2</a><a href="#bla3">bla3</a>
-
+    <table>
+        <thead>
+            <tr><th>Test</th><th>Result</th>
+        </thead>
+        <tbody id='results'>
+        </tbody>
+    </table>
     <script src="../src/Events.js" type="text/javascript"></script>
     <script src="../src/utils.js" type="text/javascript"></script>
     <script src="../src/Bromine.js" type="text/javascript"></script>
+    <script src="../src/Reporter.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var tester = new Bromine.Tester({
-            onDone : function(e){
-                console.log('tests are done', e.results);
-            }
-        });
+        var tester = new Bromine.Tester(),
+            reporter = new Bromine.Reporter,
+            table  = document.getElementById('results');
 
-        
+        tester.registerReporter(reporter);
+
+        reporter.testDone = reporter.testFail = function(name, results){
+            var i, res, tr
+                template = "<td>{text}</td><td class={state}></td>";
+
+            for (i=0;res = results[i]; i++){
+                tr = document.createElement('tr');
+                tr.innerHTML = template.replace('{text}', res.msg).replace('{state}',res.success ? 'V' : 'X');
+                table.appendChild(tr);
+            }
+        }
+
         document.addEventListener('click', function(e){
             e.target.className = 'clicked';       
         });
