@@ -8,7 +8,7 @@ Bromine is a tool for running UI tests in the browser. It provides a simple-to-u
 First - code example:
 
 
-    ```javascript
+```javascript
     var tester = new Bromine.Tester();
 
     var test = tester.registerTest({
@@ -45,6 +45,7 @@ First - code example:
     });
 
     tester.run();
+```
 
 ###Explination
 
@@ -62,11 +63,11 @@ Inside the test suite, we use `fireEventWithDelay` to execute a 'click' event, a
 The main method for creating Test suites is by using Bromine.Tester#registerTest. 
 Possible parameters for the Test constructor are:
 
-* init :  a function to run when the test is created
-* destroy : a function to run when the test is done
-* description : some textual description of the test
-* depend : a test name that if fails, will prevent this suit from running
-* tests : the actual test stack for this suit
+* `init` :  a function to run when the test is created
+* `destroy` : a function to run when the test is done
+* `description` : some textual description of the test
+* `depend` : a test name that if fails, will prevent this suit from running
+* `tests` : the actual test stack for this suit
 
 In addition, each test fires the following events:
 * start : will fire just before the test suit starts running
@@ -97,17 +98,18 @@ And the following events:
 
 The first 3 pass as arguments the test name and the test instance:
  
-    ```javascript
+```javascript
     tester.addEvent('testDone', function(e){
         console.log('test ' + e.name +'passed', e.test.results);   
     });
+```
 
 ##Bromine.Reporter
 The framework supplies a simple reporter for you to use. The reporter can either be extended, or you can override it's callbacks.
 
 Usage:
- 
-    ```javascript
+
+```javascript
     var reporter = new Bromine.Reporter;
 
     reporter.testStart = function(name, test){};
@@ -116,3 +118,4 @@ Usage:
     reporter.done = function(results){};
 
     tester.registerReporter(reporter);
+```
