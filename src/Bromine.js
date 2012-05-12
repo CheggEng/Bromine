@@ -199,7 +199,7 @@
             if (this.stop) return;
 
             if (!name){
-                this.fireEvent('done');
+                this.fireEvent('done', {results : this.results});
                 return;
             }
 
