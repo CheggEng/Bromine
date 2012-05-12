@@ -16,7 +16,11 @@
     <script src="../src/utils.js" type="text/javascript"></script>
     <script src="../src/Bromine.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var tester = new Bromine.Tester();
+        var tester = new Bromine.Tester({
+            onDone : function(e){
+                console.log('tests are done', e.results);
+            }
+        });
 
         
         document.addEventListener('click', function(e){
@@ -35,7 +39,7 @@
                 },
                 tests : [
                     function(){
-                        Bromine.Tester.fireEvent(this.element, 'click');
+                        Bromine.fireEvent(this.element, 'click');
                         this.log({
                             msg : "Anchor #"+ this.index +" should have a clicked class",
                             success : this.element.classList.contains('clicked')

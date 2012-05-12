@@ -249,7 +249,7 @@
      * @param Element
      * @param String 
      */
-    Tester.fireEvent = function fireEvent(element, event) {
+    Bromine.fireEvent = function fireEvent(element, event) {
         var evt;
 
         if (document.createEventObject) {
@@ -272,12 +272,12 @@
      * @param Function
      * @param int       optional. Delay in ms. Default is 500ms
      */
-    Tester.fireEventWithDelay = function fireEventWithDelay(element, event, cb, delay) {
+    Bromine.fireEventWithDelay = function fireEventWithDelay(element, event, cb, delay) {
         var timeout_delay = delay || 500;
 
-        Tester.fireEvent(element, event);
+        Bromine.fireEvent(element, event);
         window.setTimeout(cb, timeout_delay);
     };
 
-    this.Tester = Tester;
+    Bromine.Tester = Tester;
 }.apply(Bromine,[Bromine, Bromine.utils]);
