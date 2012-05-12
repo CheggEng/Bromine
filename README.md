@@ -7,6 +7,8 @@ Bromine is a tool for running UI tests in the browser. It provides a simple-to-u
 
 First - code example:
 
+
+    ```javascript
     var tester = new Bromine.Tester();
 
     var test = tester.registerTest({
@@ -81,10 +83,10 @@ In addition, each function has access to 3 methods to contol the flow of the tes
 ##Bromine.Tester
 The test runner is used to register suites, manage their dependencies, and execute them. It has the following methods:
 
-* registerTest(name, options)
-* registerReporter(reporter)
-* run()
-* reset()
+* `registerTest(name, options)`
+* `registerReporter(reporter)`
+* `run()`
+* `reset()`
 
 And the following events:
 
@@ -94,7 +96,8 @@ And the following events:
 * done
 
 The first 3 pass as arguments the test name and the test instance:
-
+ 
+    ```javascript
     tester.addEvent('testDone', function(e){
         console.log('test ' + e.name +'passed', e.test.results);   
     });
@@ -103,7 +106,8 @@ The first 3 pass as arguments the test name and the test instance:
 The framework supplies a simple reporter for you to use. The reporter can either be extended, or you can override it's callbacks.
 
 Usage:
-
+ 
+    ```javascript
     var reporter = new Bromine.Reporter;
 
     reporter.testStart = function(name, test){};
