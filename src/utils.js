@@ -1,8 +1,7 @@
-var Bromine = Bromine || {};
 !function(){
-    var utils = this.utils = {};
+    var utils = {};
 
-    this.Bind = function(){
+    utils.Bind = function(){
         var i,fn;
 
         this.bound = {};
@@ -22,7 +21,7 @@ var Bromine = Bromine || {};
      *  other than settting the options, any key with the on* signiture (onLoad, onComplete etc)
      *  will be added as an event
      */
-    this.Options = function Options(){
+    utils.Options = function Options(){
         var key;
         if (!this.options) this.options = {};
 
@@ -43,5 +42,8 @@ var Bromine = Bromine || {};
     };
 
     utils.Events = Events;
-
-}.apply(Bromine,[]);
+    
+    this.Bromine = {
+        utils: utils    
+    };
+}.call(this);

@@ -1,4 +1,3 @@
-var Bromine = Bromine || {};
 !function(ns, utils){
     /**
      * A Test Instance
@@ -33,6 +32,7 @@ var Bromine = Bromine || {};
         constructor : Test,
         defaultOptions : {
             init : function(){},
+            destroy : function(){},
             tests : [],
             depend : ''
         },
@@ -59,10 +59,12 @@ var Bromine = Bromine || {};
             this.tests_done = true;
 
             if (state === false){
-                this.fail(msg);
+                return this.fail(msg);
             }else{
                 this.fireEvent('done:latched');
             }
+
+            this.destroy();
         },
 
         fail : function(msg){
@@ -76,6 +78,13 @@ var Bromine = Bromine || {};
             this.fireEvent('fail',{
                 results : this.results
             });
+
+            this.destroy();
+        },
+
+        destroy : function(){
+            this.fireEvent('destroy');
+            this.options.destroy();
         },
 
         next : function(){
@@ -271,4 +280,4 @@ var Bromine = Bromine || {};
     };
 
     this.Tester = Tester;
-}.apply(Bromine,[Bromine.utils]);
+}.apply(Bromine,[Bromine, Bromine.utils]);

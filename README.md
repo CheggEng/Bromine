@@ -1,4 +1,4 @@
 Bromine
 =======
 
-JS library for UI testing in the browser
+Bromine was created with the challange or creating a Javascript based Selenium for the browser.
