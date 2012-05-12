@@ -119,3 +119,10 @@ Usage:
 
     tester.registerReporter(reporter);
 ```
+
+##Event Dispatching
+Right now Bromine supplies 2 simple methods for dispatching events on elements:
+
+1. `Bromine.fireEvent(element, type)` - will fire a DOM eveny of `type` on `element`
+2. `Bromine.fireEventWithDelay(element, type, callback [,delay])` - will fire a DOM event of `type` on `element`, then wait `delay`ms (default is 500) before dispatching `callback`. This is useful when you need to wait for a transition or effect to end before next step.
+
