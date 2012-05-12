@@ -1,9 +1,0 @@
-#!/bin/bash
-case $1 in
-    "start")
-        java -jar JSTD.jar --port 9876
-        ;;
-    *)
-        java -jar JSTD.jar --tests all --verbose
-        ;;
-esac
