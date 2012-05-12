@@ -2,7 +2,7 @@ Bromine
 =======
 Bromine is a tool for running UI tests in the browser. It provides a simple-to-use flow control mechanism, as well as utilities for executing DOM events.
 
-*Bromine was designed to be event based by nature, and relies heavily on [[https://github.com/arieh/Events|Events.js]], its syntax and its methods for passing event arguments*
+*Bromine was designed to be event based by nature, and relies heavily on (https://github.com/arieh/Events Events.js), its syntax and its methods for passing event arguments*
 ##Usage
 
 First - code example:
