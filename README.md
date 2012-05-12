@@ -2,6 +2,7 @@ Bromine
 =======
 Bromine is a tool for running UI tests in the browser. It provides a simple-to-use flow control mechanism, as well as utilities for executing DOM events.
 
+*Bromine was designed to be event based by nature, and relies heavily on [[https://github.com/arieh/Events|Events.js]], its syntax and its methods for passing event arguments*
 ##Usage
 
 First - code example:
@@ -43,7 +44,7 @@ First - code example:
 
     tester.run();
 
-###Explanation
+###Explination
 
 Bromine is composed of 3 basic components:
 
@@ -75,6 +76,8 @@ Each function in the test stack has the following methods at it's disposal:
 * `fail(msg)` - fails the test
 
 In addition, each function has access to 3 methods to contol the flow of the test - `prev`, `current`, and `next`. These can be called and passed around.
+
+As of yet, Bromine does not come bundled with a Reporter, but creating one should be very easy using the Tester events.
 
 ##Bromine.Tester
 The test runner is used to register suites, manage their dependencies, and execute them. It has the following methods:
