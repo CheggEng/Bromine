@@ -68,6 +68,7 @@ Possible parameters for the Test constructor are:
 * `description` : some textual description of the test
 * `depend` : a test name that if fails, will prevent this suit from running
 * `tests` : the actual test stack for this suit
+* `fail\_timeout` : how long to wait before reporting a fail (default is 10s). If 0, will not set timeout.
 
 In addition, each test fires the following events:
 * start : will fire just before the test suit starts running

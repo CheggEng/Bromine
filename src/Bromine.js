@@ -1,3 +1,4 @@
+
 !function(ns, utils){
     var dom_events = 'addEventListener' in document;
     /**
@@ -35,12 +36,22 @@
             init : function(){},
             destroy : function(){},
             tests : [],
-            depend : ''
+            depend : '',
+            fail_timeout : 10 * 1000
         },
 
         //runs the tests
         run : function(){
+            var $this = this;
+
             this.fireEvent('start:latched');
+
+            if (this.options.fail_timeout){
+                this.handle = setTimeout(function(){
+                    $this.fail("Test timed out");    
+                }, this.options.fail_timeout);
+            }
+
             this.next();
         },
 
@@ -59,6 +70,8 @@
         done : function(state, msg){
             this.tests_done = true;
 
+            clearTimeout(this.handle);
+
             if (state === false){
                 return this.fail(msg);
             }else{
@@ -72,6 +85,7 @@
 
         fail : function(msg){
             this.tests_done = false;
+            clearTimeout(this.handle);
 
             this.log({
                 success : false,
