@@ -42,6 +42,23 @@
     };
 
     utils.Events = Events;
+
+    utils.calculateOffsets = function (element, container) {
+        var offsetParentElm = element,
+            offsetParentOffsetLeft = 0,
+            offsetParentOffsetTop = 0;
+
+        while (offsetParentElm && (offsetParentElm != container)) {
+            offsetParentOffsetLeft += offsetParentElm.offsetLeft;
+            offsetParentOffsetTop += offsetParentElm.offsetTop;
+            offsetParentElm = offsetParentElm.offsetParent;
+        }
+
+        return {
+            left: offsetParentOffsetLeft,
+            top: offsetParentOffsetTop
+        };
+    };
     
     this.Bromine = {
         utils: utils    

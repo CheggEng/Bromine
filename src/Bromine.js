@@ -270,6 +270,11 @@
 
     this.Test = Test;
 
+    function getIEEvent(){
+        var evt = document.createEventObject();
+        return evt;
+    }
+
     /**
      * Dispatches a DOM event on a given element
      *
@@ -281,14 +286,85 @@
 
         if (document.createEventObject) {
             // dispatch for IE
-            evt = document.createEventObject();
-            return element.fireEvent('on' + event, evt);
+            evt = getIEEvent();
+            element.fireEvent('on' + event, evt); 
         } else {
             // dispatch for firefox + others
             evt = document.createEvent("HTMLEvents");
             evt.initEvent(event, true, true); // event type,bubbling,cancelable
-            return !element.dispatchEvent(evt);
+            element.dispatchEvent(evt);
         }
+    };
+
+    /**
+     * Fires a mouse event on element
+     *
+     * Additional parameters can be:
+     *  
+     *  x, y, details, button, ctrl, alt, shift, meta, relatedTarget
+     *
+     *  if no x/y supplied, will use element position
+     */
+    Bromine.fireMouseEvent = function(element, type, params){
+        var evt,
+            position = utils.calculateOffsets(element),
+            clicks = 'details' in params ? params.details : 1,
+            x = 'x' in params ? params.x : position.left,
+            y = 'y' in params ? params.y : position.top,
+            button = 'button' in params ? params.button : 0;
+
+        if (document.createEvent){
+            evt = document.createEvent("MouseEvents");
+            evt.initMouseEvent(type, true, true, window, 
+                                 clicks, x, y, x, y, 
+                                 params.ctrl, params.alt, params.shift, params.meta, 
+                                 button, params.relatedTarget);
+            element.dispatchEvent(evt);
+        }else{
+            evt = getIEEvent(); 
+            evt.screenX = x;
+            evt.screenY = y;    
+            evt.clientX = x;
+            evt.clientY = y;
+            evt.ctrlKey = params.ctrl;
+            evt.altKey = params.alt;
+            evt.shiftKey = params.shift;
+            evt.metaKey = params.meta;
+            evt.button = button;
+            evt.relatedTarget = params.relatedTarget;
+            evt.detail = clicks;
+
+            element.fireEvent('on'+type, evt);
+        }
+    }; 
+
+    /**
+     * Fires a keyboard event on element
+     *
+     * Additional parameters can be:
+     *  
+     *  ctrl, alt, shift, meta, key, charCode
+     */    
+    Bromine.fireKeyboardEvent = function(element, type, params){
+        var evt;
+
+        if (document.createEvent){
+            evt = document.createEvent('KeyboardEvent');
+            evt.initKeyEvent(type, true, true, null, params.ctrl, params.alt, params.shift, params.meta, 
+                        params.key, params.charCode);
+            element.dispatchEvent(evt);
+        }else{
+            evt = getIEEvent();   
+            evt.ctrlKey = params.ctrl;
+            evt.altKey = params.alt;
+            evt.shiftKey = params.shift;
+            evt.metaKey = params.meta;  
+            evt.keyCode = params.key;
+            evt.charCode = params.charCode;
+
+            element.fireEvent('on'+type, evt);
+        }
+        
     };
 
     /**
