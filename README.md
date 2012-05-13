@@ -47,7 +47,7 @@ First - code example:
     tester.run();
 ```
 
-###Explination
+###Explanation
 
 Bromine is composed of 3 basic components:
 
@@ -140,4 +140,4 @@ x, y, details, button, ctrl, alt, shift, meta, relatedTarget
 Parameters can be:
 ctrl, alt, shift, meta, key, charCode
 
-*Note - these methods are not tested on IE, so I cannot gaurentee they will work on IE < 9 (IE9+ will work fine)
+*Note - these methods are not tested on IE, so I cannot gaurentee they will work on IE < 9 (IE9+ will work fine)*
