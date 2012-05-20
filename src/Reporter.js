@@ -19,7 +19,7 @@
             }
         },
         done : function(res, test){
-            console.log('Test Runner Done',e.args.results);
+            console.log('Test Runner Done',[res,test]);
         },
         testStart : function(name, test){
             console.log('Test Start',[name, res]);    
