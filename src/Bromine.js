@@ -47,7 +47,7 @@
             this.fireEvent('start:latched');
 
             if (this.options.fail_timeout){
-                this.handle = setTimeout(function(){
+                this.timeout_handle = setTimeout(function(){
                     $this.fail("Test timed out");    
                 }, this.options.fail_timeout);
             }
@@ -70,7 +70,7 @@
         done : function(state, msg){
             this.tests_done = true;
 
-            clearTimeout(this.handle);
+            clearTimeout(this.timeout_handle);
 
             if (state === false){
                 return this.fail(msg);
@@ -85,7 +85,7 @@
 
         fail : function(msg){
             this.tests_done = false;
-            clearTimeout(this.handle);
+            clearTimeout(this.timeout_handle);
 
             this.log({
                 success : false,
