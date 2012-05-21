@@ -306,6 +306,7 @@
      *  if no x/y supplied, will use element position
      */
     Bromine.fireMouseEvent = function(element, type, params){
+        if (!params) params = {};
         var evt,
             position = utils.calculateOffsets(element),
             clicks = 'details' in params ? params.details : 1,
@@ -347,6 +348,7 @@
      */    
     Bromine.fireKeyboardEvent = function(element, type, params){
         var evt;
+        if (!params) params = {};
 
         if (document.createEvent){
             evt = document.createEvent('KeyboardEvent');
