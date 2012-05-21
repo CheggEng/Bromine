@@ -96,7 +96,7 @@
             this.options.destroy();
         },
 
-        setTimout : function(){ 
+        setTimeout : function(){ 
             var $this = this;
 
             if (this.options.fail_timeout){
