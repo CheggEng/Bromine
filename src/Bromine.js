@@ -42,15 +42,7 @@
 
         //runs the tests
         run : function(){
-            var $this = this;
-
             this.fireEvent('start:latched');
-
-            if (this.options.fail_timeout){
-                this.handle = setTimeout(function(){
-                    $this.fail("Test timed out");    
-                }, this.options.fail_timeout);
-            }
 
             this.next();
         },
@@ -70,7 +62,7 @@
         done : function(state, msg){
             this.tests_done = true;
 
-            clearTimeout(this.handle);
+            clearTimeout(this.timeout_handle);
 
             if (state === false){
                 return this.fail(msg);
@@ -85,7 +77,7 @@
 
         fail : function(msg){
             this.tests_done = false;
-            clearTimeout(this.handle);
+            clearTimeout(this.timeout_handle);
 
             this.log({
                 success : false,
@@ -104,10 +96,24 @@
             this.options.destroy();
         },
 
-        next : function(){
+        setTimout : function(){ 
+            var $this = this;
+
+            if (this.options.fail_timeout){
+                clearTimeout(this.timeout_handle);
+
+                this.timeout_handle = setTimeout(function(){
+                    $this.fail("Test timed out");    
+                }, this.options.fail_timeout);
+            } 
+        },
+
+        next : function(){                          
             var fn = this.stack[this.test_index++];
 
             if (this.tests_done) return null;
+
+            this.setTimeout();
 
             return fn && fn.apply(this, arguments);
         },
@@ -115,6 +121,7 @@
         current : function(){
             var fn = this.test_index === 0 ? this.stack[this.test_index] : this.stack[this.test_index -1];
             if (this.tests_done) return null;
+            this.setTimeout();
             return fn && fn.apply(this, arguments);
         },
 
@@ -126,6 +133,7 @@
             if (this.test_index < 1) this.test_index = 1;
 
             fn = this.stack[this.test_index-1];
+            this.setTimeout();
 
             return fn && fn.apply(this, arguments);
         }
@@ -306,6 +314,7 @@
      *  if no x/y supplied, will use element position
      */
     Bromine.fireMouseEvent = function(element, type, params){
+        if (!params) params = {};
         var evt,
             position = utils.calculateOffsets(element),
             clicks = 'details' in params ? params.details : 1,
@@ -347,6 +356,7 @@
      */    
     Bromine.fireKeyboardEvent = function(element, type, params){
         var evt;
+        if (!params) params = {};
 
         if (document.createEvent){
             evt = document.createEvent('KeyboardEvent');
