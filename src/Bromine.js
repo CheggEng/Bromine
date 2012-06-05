@@ -1,14 +1,17 @@
-
 !function(ns, utils){
+    /**
+     * @module Bromine
+     */
     var dom_events = 'addEventListener' in document;
     /**
      * A Test Instance
-     *
-     *  Possible options:
-     *
-     *      - init (function): a function to execute before tests start
-     *      - tests (array): a queue of functions to run
-     *      - depend (string): a test dependancy
+     * @class Bromine.Test
+     * @constructor
+     * @param {object} options
+     *  @param {function} [options.init]   a function to execute before tests start 
+     *  @param {array}    [options.tests]  a queue of functions to run 
+     *  @param {string}   [options.depend] a test dependancy
+     *  @param {int}      [options.fail_timeout=10 seconds] how much time to wait for tests to finish before reporting failure
      */
     function Test(opts){
         utils.Options.call(this);
@@ -19,6 +22,11 @@
         this.stack = this.options.tests;
         this.description = this.options.description;
 
+        /**
+         * holds a stack of reported results
+         * @propery results
+         * @type {Array}
+         */
         this.results = [];
 
         this.next = this.next.bind(this);
@@ -28,7 +36,28 @@
         this.depend = opts.depend;
 
         opts.init && opts.init.call(this);
-    }
+    } 
+
+    /**
+     * fires when test starts running. Latched
+     * @event start
+     */
+    /**
+     * fires if and when the test has finished running successfuly
+     * @event done
+     * @param {object} args
+     *  @param {array} results the results of the test
+     */ 
+    /**
+     * fires if and when the test has finished running but failed
+     * @event fail
+     * @param {object} args
+     *  @param {array} results the results of the test
+     */  
+    /**
+     * fires on object destruction
+     * @event destory
+     */        
 
     Test.prototype = {
         constructor : Test,
@@ -40,24 +69,30 @@
             fail_timeout : 10 * 1000
         },
 
-        //runs the tests
+        /**
+         * runs the tests
+         * @method run
+         */
         run : function(){
             this.fireEvent('start:latched');
 
             this.next();
         },
 
-        //logs results
+        /**
+         * logs a result to the test
+         * @method log
+         * @param {object} params
+         */
         log : function(params){
             this.results.push(params);
         },
 
         /**
          * Called when tests are done
-         *
-         *  @param bool   state   whether test passed or failed
-         *  @param String message
-         *
+         * @method done
+         *  @param {bool} state       whether test passed or failed
+         *  @param {String} [message] only used on failure
          */
         done : function(state, msg){
             this.tests_done = true;
@@ -74,9 +109,13 @@
 
             this.destroy();
         },
-
+        /**
+         * signifies a test failure. Will stop any more steps from running
+         * @method {fail}
+         * @param {string} message
+         */
         fail : function(msg){
-            this.tests_done = false;
+            this.tests_done = true;
             clearTimeout(this.timeout_handle);
 
             this.log({
@@ -108,6 +147,10 @@
             } 
         },
 
+        /**
+         * calls the next function in the stack
+         * @method next
+         */
         next : function(){                          
             var fn = this.stack[this.test_index++];
 
@@ -117,7 +160,11 @@
 
             return fn && fn.apply(this, arguments);
         },
-
+        
+        /**
+         * calls the current function in the stack
+         * @method current
+         */
         current : function(){
             var fn = this.test_index === 0 ? this.stack[this.test_index] : this.stack[this.test_index -1];
             if (this.tests_done) return null;
@@ -125,6 +172,10 @@
             return fn && fn.apply(this, arguments);
         },
 
+        /**
+         * calls the previous function in the stack
+         * @method prev
+         */
         prev : function(){
             var fn;
             if (this.tests_done) return null;
@@ -141,8 +192,13 @@
 
     /**
      *  Test Runner
-     *
      *  Takes care of registering tests, running them and reporting their results
+     *  @class Bromine.Tester
+     *  @constructor
+     *
+     *  @param {object} [options]
+     *      @param {array} [options.exclude] a list of test names to skip
+     *      @param {array} [options.run_only] if provided, will only run tests that are in it
      */
     function Tester(opts){
         utils.Bind.call(this);
@@ -155,20 +211,48 @@
         this.depends = [];
         this.stack = [];
         this.results = {};
-    }
-
+    }    
+    /**
+     * fires when a test starts running
+     * @event start
+     * @param args
+     *  @param {string} args.name
+     *  @param {Bromine.Test} args.test
+     */ 
+    /**
+     * fires when all tests are done
+     * @event done
+     * @param args
+     *  @param {array} args.results
+     */    
+    /**
+     * fires when a test is done successfuly
+     * @event testDone
+     * @param args
+     *  @param {string} args.name
+     *  @param {Bromine.Test} args.test   
+     *  @param {Array} args.results
+     */      
+    /**
+     * fires when a test is done but failed
+     * @event testFAil
+     * @param args
+     *  @param {string} args.name
+     *  @param {Bromine.Test} args.test   
+     *  @param {Array} args.results
+     */  
     Tester.prototype = {
         constructor : Tester,
         defaultOptions : {
-            exclude : [], //an array of tests to exclude from running
-            run_only : [] //an array of tests to run exclusively
+            exclude : [],
+            run_only : []
         },
         bind : ['testDone','testFailed'],
         /**
          * register a test
-         *
-         *  @param string name
-         *  @param Object|Test paramaters for Test constructor or a Test instance
+         * @method registerTest
+         *  @param {string} name
+         *  @param {Object|Bromine.Test} paramaters for Test constructor or a Test instance
          */
         registerTest : function(name, params){
             var test = this.tests[name] = params instanceof Test ? params : new Test(params),
@@ -195,20 +279,29 @@
                 this.stack.push(name);
             }
         },
-
-        //returns the test stack
+        /**
+         * returns the tests stack
+         * @method getTests
+         * @return {array} tests
+         */
         getTests : function(){
             return this.stack;
         },
 
-        //execute test suites
+        /**
+         * starts running tests
+         * @method run
+         */
         run : function(){
             this.original_stack = JSON.stringify(this.stack);
             this.stop = false;
             this.next();
         },
 
-        //resets test runner
+        /** 
+         * resets test runner
+         * @method reset
+         */
         reset : function(){
             this.stop = true;
             this.stack = JSON.parse(this.original_stack);
@@ -234,7 +327,8 @@
             }
 
             this.tests[name].run();
-        },
+        },   
+
         testDone : function(e){
             var stack = this.depends[e.dispatcher.name],
                 i, name;
@@ -264,6 +358,11 @@
             this.results[e.dispatcher.name] = e.dispatcher.results;
             this.next();
         },
+        /**
+         * registers a Test reporter
+         * @method registerReporter
+         * @param Bromine.Reporter
+         */
         registerReporter : function(r){
             var target = dom_events ? r : r.handleEvent;
 
@@ -276,7 +375,6 @@
         }
     };
 
-    this.Test = Test;
 
     function getIEEvent(){
         var evt = document.createEventObject();
@@ -284,10 +382,16 @@
     }
 
     /**
+     * @class Bromine
+     */
+
+    /**
      * Dispatches a DOM event on a given element
+     * @method fireEvent
+     * @static
      *
-     * @param Element
-     * @param String 
+     * @param {Element} el
+     * @param {String}  type
      */
     Bromine.fireEvent = function fireEvent(element, event) {
         var evt;
@@ -312,6 +416,12 @@
      *  x, y, details, button, ctrl, alt, shift, meta, relatedTarget
      *
      *  if no x/y supplied, will use element position
+     *
+     * @method fireMouseEvent
+     * @static
+     * @param {element} el
+     * @param {string}  type
+     * @param {object}  params
      */
     Bromine.fireMouseEvent = function(element, type, params){
         if (!params) params = {};
@@ -353,6 +463,12 @@
      * Additional parameters can be:
      *  
      *  ctrl, alt, shift, meta, key, charCode
+     *
+     * @method fireKeyboardEvent
+     * @static
+     * @param {element} el
+     * @param {string}  type
+     * @param {object}  params    
      */    
     Bromine.fireKeyboardEvent = function(element, type, params){
         var evt;
@@ -379,11 +495,13 @@
 
     /**
      * Dispatches a DOM event on an element, then dispatches a callback after given delay
+     * @method fireEventWithDelay
+     * @static
      *
-     * @param Element
-     * @param String
-     * @param Function
-     * @param int       optional. Delay in ms. Default is 500ms
+     * @param {Element}  el
+     * @param {String}   type
+     * @param {Function} callback
+     * @param {int}      [delay=500]
      */
     Bromine.fireEventWithDelay = function fireEventWithDelay(element, event, cb, delay) {
         var timeout_delay = delay || 500;
@@ -393,4 +511,5 @@
     };
 
     Bromine.Tester = Tester;
+    Bromine.Test = Test;
 }.apply(Bromine,[Bromine, Bromine.utils]);
