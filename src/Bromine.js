@@ -31,6 +31,7 @@
 
         this.next = this.next.bind(this);
         this.current = this.current.bind(this);
+        this.prev = this.prev.bind(this);
 
         this.test_index = 0;
         this.depend = opts.depend;
