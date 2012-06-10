@@ -24,7 +24,7 @@
 
         /**
          * holds a stack of reported results
-         * @propery results
+         * @property results
          * @type {Array}
          */
         this.results = [];
