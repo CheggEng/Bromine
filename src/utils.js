@@ -1,9 +1,22 @@
 !function(){
+    /**
+     * @module Bromine.utils
+     */
     var utils = {};
 
+    /**
+     * this mixin automatically creates a `bound` collection of functions
+     * @class Bind
+     */
     utils.Bind = function(){
         var i,fn;
 
+        /**
+         * collection of bound function
+         * @property bound
+         * @type {Object}
+         * @protected
+         */
         this.bound = {};
 
         if (!this.bind) return;
@@ -20,6 +33,8 @@
      *  mixing also provides the setOptions method.
      *  other than settting the options, any key with the on* signiture (onLoad, onComplete etc)
      *  will be added as an event
+     *
+     *  @class Options
      */
     utils.Options = function Options(){
         var key;
@@ -29,6 +44,11 @@
             this.options[key] = this.defaultOptions[key];
         }
 
+        /**
+         * @method setOptions
+         * @param {Object} options
+         * @chainable
+         */
         this.setOptions = function(options){
             var key;
             if (typeof options !== 'object' || options === null) return;
@@ -43,10 +63,22 @@
 
     utils.Events = Events;
 
+    /**
+     * calculates the offsets of an element relevant to one of it's parent
+     * @method calculateOffsets
+     * @static
+     *
+     * @param {element} element
+     * @param {element} [container] default to `document.body`
+     *
+     * @return {object} {left, top}
+     */
     utils.calculateOffsets = function (element, container) {
         var offsetParentElm = element,
             offsetParentOffsetLeft = 0,
             offsetParentOffsetTop = 0;
+
+        if (!container) container = document.body;
 
         while (offsetParentElm && (offsetParentElm != container)) {
             offsetParentOffsetLeft += offsetParentElm.offsetLeft;

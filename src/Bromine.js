@@ -6,7 +6,10 @@
     /**
      * A Test Instance
      * @class Bromine.Test
+     * @uses Events
+     * @uses Options
      * @constructor
+     *
      * @param {object} options
      *  @param {function} [options.init]   a function to execute before tests start 
      *  @param {array}    [options.tests]  a queue of functions to run 
@@ -196,6 +199,9 @@
      *  Takes care of registering tests, running them and reporting their results
      *  @class Bromine.Tester
      *  @constructor
+     *  @uses Events
+     *  @uses Options 
+     *  @uses Bind
      *
      *  @param {object} [options]
      *      @param {array} [options.exclude] a list of test names to skip
