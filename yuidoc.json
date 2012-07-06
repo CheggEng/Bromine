@@ -1,0 +1,8 @@
+{
+    "name": "Chegg eReader",
+    "options": {
+        "linkNatives": "true",
+        "outdir": "docs",
+        "paths": "."
+    }
+}
