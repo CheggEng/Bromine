@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Bromine by CheggEng</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Bromine</h1>
+        <p>JS library for UI testing in the browser</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/CheggEng/Bromine" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/CheggEng/Bromine/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/CheggEng/Bromine/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>Bromine</h1>
+
+<p>Bromine is a tool for running UI tests in the browser. It provides a simple-to-use flow control mechanism, as well as utilities for executing DOM events.</p>
+
+<p><em>Bromine was designed to be event based by nature, and relies heavily on <a href="https://github.com/arieh/Events">Events.js</a>, its syntax and its methods for passing event arguments</em></p>
+
+<h2>Usage</h2>
+
+<p>First - code example:</p>
+
+<div class="highlight">
+<pre>    <span class="kd">var</span> <span class="nx">tester</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bromine</span><span class="p">.</span><span class="nx">Tester</span><span class="p">();</span>
+
+    <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">tester</span><span class="p">.</span><span class="nx">registerTest</span><span class="p">({</span>
+        <span class="nx">init</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">handle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'handle'</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelecrot</span><span class="p">(</span><span class="s1">'target'</span><span class="p">);</span>
+        <span class="p">},</span>
+        <span class="nx">destroy</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">handle</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>    
+        <span class="p">},</span>
+        <span class="nx">tests</span> <span class="o">:</span> <span class="p">[</span>
+            <span class="kd">function</span><span class="p">(){</span>
+                <span class="c1">//in this example, the click will trigger a transition, so we have</span>
+                <span class="c1">//to wait until it's done</span>
+                <span class="nx">Bromine</span><span class="p">.</span><span class="nx">fireEventWithDelay</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handle</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">next</span><span class="p">);</span>    
+            <span class="p">},</span>
+            <span class="kd">function</span><span class="p">(){</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">)){</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="s1">'Target is not visible'</span><span class="p">);</span>    
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>    
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="c1">//first method to register events</span>
+        <span class="nx">onStart</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'starting test suite'</span><span class="p">);</span>    
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="c1">//second method of registering events</span>
+    <span class="nx">test</span><span class="p">.</span><span class="nx">addEvent</span><span class="p">(</span><span class="s1">'fail'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'fail'</span><span class="p">);</span>    
+    <span class="p">});</span>
+
+    <span class="nx">tester</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+</pre>
+</div>
+
+
+<h3>Explanation</h3>
+
+<p>Bromine is composed of 3 basic components:</p>
+
+<ol>
+<li>
+<code>Bromine.Test</code> - A test suit, which manages a stack of steps to execute</li>
+<li>
+<code>Bromine.Tester</code> - A test runner</li>
+<li>
+<code>Bromine.Reporter</code> - A simple Reporter object for you to extend</li>
+<li>Event dispatching utilities, such as <code>Bromine.fireEvent</code> and <code>Bromine.fireEventWithDelay</code>.</li>
+</ol><p>In the example above, we start by creating a Test-runner. We then register a Test suit on top of it. 
+Inside the test suite, we use <code>fireEventWithDelay</code> to execute a 'click' event, and wait before executing the next function in the stack (default is 500ms). The wait is becuase many times we want to wait for a transition or an effect to finish running.</p>
+
+<h2>Bromine.Test</h2>
+
+<p>The main method for creating Test suites is by using Bromine.Tester#registerTest. 
+Possible parameters for the Test constructor are:</p>
+
+<ul>
+<li>
+<code>init</code> :  a function to run when the test is created</li>
+<li>
+<code>destroy</code> : a function to run when the test is done</li>
+<li>
+<code>description</code> : some textual description of the test</li>
+<li>
+<code>depend</code> : a test name that if fails, will prevent this suit from running</li>
+<li>
+<code>tests</code> : the actual test stack for this suit</li>
+<li>
+<code>fail\_timeout</code> : how long to wait before reporting a fail (default is 10s). If 0, will not set timeout.</li>
+</ul><p>In addition, each test fires the following events:</p>
+
+<ul>
+<li>start : will fire just before the test suit starts running</li>
+<li>done  : will fire when test suit finishes successfuly. </li>
+<li>fail  : will fire when test suit fails</li>
+</ul><p>Each function in the test stack has the following methods at it's disposal:</p>
+
+<ul>
+<li>
+<code>log(obj)</code> - logs a result into the results stack</li>
+<li>
+<code>done</code> - finished the test successfully</li>
+<li>
+<code>fail(msg)</code> - fails the test</li>
+</ul><p>In addition, each function has access to 3 methods to contol the flow of the test - <code>prev</code>, <code>current</code>, and <code>next</code>. These can be called and passed around.</p>
+
+<h2>Bromine.Tester</h2>
+
+<p>The test runner is used to register suites, manage their dependencies, and execute them. It has the following methods:</p>
+
+<ul>
+<li><code>registerTest(name, options)</code></li>
+<li><code>registerReporter(reporter)</code></li>
+<li><code>run()</code></li>
+<li><code>reset()</code></li>
+</ul><p>And the following events:</p>
+
+<ul>
+<li>testStart</li>
+<li>testDone</li>
+<li>testFail</li>
+<li>done</li>
+</ul><p>The first 3 pass as arguments the test name and the test instance:</p>
+
+<div class="highlight">
+<pre>    <span class="nx">tester</span><span class="p">.</span><span class="nx">addEvent</span><span class="p">(</span><span class="s1">'testDone'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'test '</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span><span class="s1">'passed'</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">results</span><span class="p">);</span>   
+    <span class="p">});</span>
+</pre>
+</div>
+
+
+<h2>Bromine.Reporter</h2>
+
+<p>The framework supplies a simple reporter for you to use. The reporter can either be extended, or you can override it's callbacks.</p>
+
+<p>Usage:</p>
+
+<div class="highlight">
+<pre>    <span class="kd">var</span> <span class="nx">reporter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bromine</span><span class="p">.</span><span class="nx">Reporter</span><span class="p">;</span>
+
+    <span class="nx">reporter</span><span class="p">.</span><span class="nx">testStart</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">test</span><span class="p">){};</span>
+    <span class="nx">reporter</span><span class="p">.</span><span class="nx">testDone</span>  <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">results</span><span class="p">,</span> <span class="nx">test</span><span class="p">){};</span>
+    <span class="nx">reporter</span><span class="p">.</span><span class="nx">testFail</span>  <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">results</span><span class="p">,</span> <span class="nx">test</span><span class="p">){};</span>
+    <span class="nx">reporter</span><span class="p">.</span><span class="nx">done</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">results</span><span class="p">){};</span>
+
+    <span class="nx">tester</span><span class="p">.</span><span class="nx">registerReporter</span><span class="p">(</span><span class="nx">reporter</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<h2>Event Dispatching</h2>
+
+<p>Right now Bromine supplies 2 simple methods for dispatching events on elements:</p>
+
+<ol>
+<li>
+<code>Bromine.fireEvent(element, type)</code> - will fire a DOM eveny of <code>type</code> on <code>element</code>
+</li>
+<li>
+<code>Bromine.fireEventWithDelay(element, type, callback [,delay])</code> - will fire a DOM event of <code>type</code> on <code>element</code>, then wait <code>delay</code>ms (default is 500) before dispatching <code>callback</code>. This is useful when you need to wait for a transition or effect to end before next step.</li>
+</ol><h3>Complex DOM Events</h3>
+
+<p>In case you need special event details (such as clientX or e.keyCode), Bromine supplies 2 helper methods:</p>
+
+<h4>Bromine.fireMouseEvent(element, type, params)</h4>
+
+<p>Parameters can be:
+x, y, details, button, ctrl, alt, shift, meta, relatedTarget   </p>
+
+<h4>Bromine.fireKeyboardEvent(element, type, params)</h4>
+
+<p>Parameters can be:
+ctrl, alt, shift, meta, key, charCode</p>
+
+<p><em>Note - these methods are not tested on IE, so I cannot gaurentee they will work on IE &lt; 9 (IE9+ will work fine)</em></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/CheggEng">CheggEng</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
