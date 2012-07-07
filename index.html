@@ -54,18 +54,19 @@ we had to write a lot of JS code in it's tests, to be able to properly monitor t
 <p>Today, all our automated tests are running using Bromine. We were surprised by the power it gave us, and the level of details we were able to test, and so we decided to open source it, so we could share it with the world.</p>
 <h2>Usage</h2>
 
-<p>First - code example:</p>
+<p>First - a code example:</p>
 
 <div class="highlight">
 <pre>    <span class="kd">var</span> <span class="nx">tester</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bromine</span><span class="p">.</span><span class="nx">Tester</span><span class="p">();</span>
 
-    <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">tester</span><span class="p">.</span><span class="nx">registerTest</span><span class="p">({</span>
+    <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="nx">tester</span><span class="p">.</span><span class="nx">registerTest</span><span class="p">(</span><span class="s1">'Example Test'</span><span class='p'>,{</span>
         <span class="nx">init</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">handle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'handle'</span><span class="p">);</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelecrot</span><span class="p">(</span><span class="s1">'target'</span><span class="p">);</span>
         <span class="p">},</span>
         <span class="nx">destroy</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">handle</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>    
+            <span class="k">this</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>    
         <span class="p">},</span>
         <span class="nx">tests</span> <span class="o">:</span> <span class="p">[</span>
             <span class="kd">function</span><span class="p">(){</span>
