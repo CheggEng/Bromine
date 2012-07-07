@@ -102,6 +102,20 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
+&#x2F;**!Copyright 2012 Chegg inc
+
+   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http:&#x2F;&#x2F;www.apache.org&#x2F;licenses&#x2F;LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.   
+ *&#x2F;
 !function(ns, utils){
     &#x2F;**
      * @module Bromine
@@ -118,7 +132,7 @@
      *  @param {function} [options.init]   a function to execute before tests start 
      *  @param {array}    [options.tests]  a queue of functions to run 
      *  @param {string}   [options.depend] a test dependancy
-     *  @param {int}      [options.fail_timeout=10 seconds] how much time to wait for tests to finish before reporting failure
+     *  @param {int}      [options.fail_timeout=10s] how much time to wait for tests to finish before reporting failure
      *&#x2F;
     function Test(opts){
         utils.Options.call(this);
