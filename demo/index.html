@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bromine Example</title>
+    <style type="text/css">
+        #wrap{
+            width:900px;
+            margin: 20px auto;
+            border:1px solid #fff;
+            border-radius:20px;
+            background:#fff;
+            padding:30px;
+        }
+
+        #wrap section{
+            margin:10px;
+        }
+
+        #start {
+            display:block;
+            margin:0 auto;
+            font-size:2em;
+            color:#abc;
+        }
+
+        h2 {
+            width:200px;
+            height:20px;
+            line-height:20px;
+            vertical-align:middle;
+            background:#396DAD;
+            color:#fff;
+            font-weight:bold;
+            cursor:pointer;
+            padding:2px 5px;    
+        }
+
+        #sort{
+            width:510px;
+            height:50px;
+            border:1px solid black;
+            margin:10px;
+            padding:0;
+        }
+
+        #sort li{
+            display:inline-block;
+            width:90px;
+            padding:5px;
+            height:40px;
+            line-height:40px;
+            vertical-align:middle;
+            text-align:middle;
+            cursor:pointer;
+            border:1px solid;    
+        }
+
+        #sort .current{
+            background:#fed;        
+        }
+
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <section id='wrap'>
+    <h1>Bromine Demo</h1>
+    <a id='start' href='javascript:;'>Start</a>
+    <section>
+    <article id='acord'>
+        <h2 id=sec1 class='current'>Section 1</h2>
+        <p>There is nothing like a Sunday afternoon and a really good used bookstore.  Today my friend and I wandered into a new one on our way home from lunch.  Lorem Ipsum, located in Inman Square, Cambridge, is a quiet unassuming little store.  I was deceived at first by the simple arrangements and seemingly few bookshelves.  I noticed one tiny spot labeled, "Good books for kids" and figured it was the only kids book section.  In this section of 20ish books they did have two books on the list in my brain of "Good Books to Buy."</p>
+        
+        <h2 id=sec2>Section 2</h2>
+        <p>"This store is pretty cool, but their children's section is seriously lacking," I mumbled to my friend.  Oh me.  Turn the corner and there was the kids book section I was looking for, which was NOT seriously lacking!  Although it was restricted to two and a half book shelves, these shelves were packed with the best of the best.  Soon I had a stack of books I had to have.  Then I added some numbers in my head and quietly re-shelved a few of the books.
+    </p>
+        <h2 id=sec3>Section 3</h2>
+        <p>My favorite section was the quirky children's books.  (It had a really cool name but I can't remember right now...)  Here I found old copies of books, strange children's books never heard of, and titles that made me laugh out loud, such as: Peep Show: A little book of Rhymes. Ha!</p>
+    </article>
+    </section>
+    <section>
+    <ol id='sort'><li>Sec 1</li><li>Sec 2</li><li>Sec 3</li><li>Sec 4</li><li>Sec 5</li></ol> 
+    </section>
+    </section>
+<script src="../bin/bromine.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js" type="text/javascript"></script>
+<script src="mootools-fx.min.js" type="text/javascript"></script>
+<script src="main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+</html>
