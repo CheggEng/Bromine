@@ -3,22 +3,8 @@
         "name": "Chegg eReader"
     },
     "files": {
-        "/Users/arieh/www/Bromine/bin/bromine.js": {
-            "name": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "/Users/arieh/www/Bromine/bin/bromine.min.js": {
-            "name": "/Users/arieh/www/Bromine/bin/bromine.min.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "/Users/arieh/www/Bromine/lib/Events/Events.js": {
-            "name": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+        "lib/Events/Events.js": {
+            "name": "lib/Events/Events.js",
             "modules": {
                 "Events": 1
             },
@@ -28,8 +14,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "/Users/arieh/www/Bromine/src/Bromine.js": {
-            "name": "/Users/arieh/www/Bromine/src/Bromine.js",
+        "src/Bromine.js": {
+            "name": "src/Bromine.js",
             "modules": {
                 "Bromine": 1
             },
@@ -41,15 +27,15 @@
             "fors": {},
             "namespaces": {}
         },
-        "/Users/arieh/www/Bromine/src/license.js": {
-            "name": "/Users/arieh/www/Bromine/src/license.js",
+        "src/license.js": {
+            "name": "src/license.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
         },
-        "/Users/arieh/www/Bromine/src/utils.js": {
-            "name": "/Users/arieh/www/Bromine/src/utils.js",
+        "src/utils.js": {
+            "name": "src/utils.js",
             "modules": {
                 "Bromine.utils": 1
             },
@@ -57,20 +43,6 @@
                 "Bind": 1,
                 "Options": 1
             },
-            "fors": {},
-            "namespaces": {}
-        },
-        "/Users/arieh/www/Bromine/tests/lib/JasmineAdapter.js": {
-            "name": "/Users/arieh/www/Bromine/tests/lib/JasmineAdapter.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "/Users/arieh/www/Bromine/tests/lib/jasmine.js": {
-            "name": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "modules": {},
-            "classes": {},
             "fors": {},
             "namespaces": {}
         }
@@ -85,21 +57,8 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 124
-        },
-        "Bromine.utils": {
-            "name": "Bromine.utils",
-            "submodules": {},
-            "classes": {
-                "Bind": 1,
-                "Options": 1
-            },
-            "fors": {},
-            "namespaces": {},
-            "tag": "module",
-            "file": "/Users/arieh/www/Bromine/src/utils.js",
-            "line": 43
         },
         "Bromine": {
             "name": "Bromine",
@@ -112,8 +71,21 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 405
+        },
+        "Bromine.utils": {
+            "name": "Bromine.utils",
+            "submodules": {},
+            "classes": {
+                "Bind": 1,
+                "Options": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/utils.js",
+            "line": 43
         }
     },
     "classes": {
@@ -130,7 +102,7 @@
             ],
             "module": "Events",
             "namespace": "",
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 124,
             "description": "Events Provider.\n\nCan function either as a standalone or a Mixin",
             "is_constructor": 1,
@@ -142,39 +114,6 @@
                 }
             ]
         },
-        "Bind": {
-            "name": "Bind",
-            "shortname": "Bind",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [
-                "Bromine.Tester"
-            ],
-            "module": "Bromine.utils",
-            "namespace": "",
-            "file": "/Users/arieh/www/Bromine/src/utils.js",
-            "line": 21,
-            "description": "this mixin automatically creates a `bound` collection of functions"
-        },
-        "Options": {
-            "name": "Options",
-            "shortname": "Options",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [
-                "Bromine.Test",
-                "Bromine.Tester"
-            ],
-            "module": "Bromine.utils",
-            "namespace": "",
-            "file": "/Users/arieh/www/Bromine/src/utils.js",
-            "line": 43,
-            "description": "A simple mixin for providing and options argument.\nIf the object has a defaultOptions instance it will set them.\n\nmixing also provides the setOptions method.\nother than settting the options, any key with the on* signiture (onLoad, onComplete etc)\nwill be added as an event"
-        },
         "Bromine.Test": {
             "name": "Bromine.Test",
             "shortname": "Bromine.Test",
@@ -185,7 +124,7 @@
             "extension_for": [],
             "module": "Bromine",
             "namespace": "",
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 20,
             "description": "A Test Instance",
             "uses": [
@@ -216,13 +155,15 @@
                             "description": "a test dependancy",
                             "type": "String",
                             "optional": true
+                        },
+                        {
+                            "name": "fail_timeout",
+                            "description": "how much time to wait for tests to finish before reporting failure",
+                            "type": "Int",
+                            "optional": true,
+                            "optdefault": "10s"
                         }
                     ]
-                },
-                {
-                    "name": "[options.fail_timeout=10",
-                    "description": "seconds] how much time to wait for tests to finish before reporting failure",
-                    "type": "Int"
                 }
             ]
         },
@@ -236,7 +177,7 @@
             "extension_for": [],
             "module": "Bromine",
             "namespace": "",
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 211,
             "description": "Test Runner\nTakes care of registering tests, running them and reporting their results",
             "is_constructor": 1,
@@ -278,765 +219,46 @@
             "extension_for": [],
             "module": "Bromine",
             "namespace": "",
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 405
+        },
+        "Bind": {
+            "name": "Bind",
+            "shortname": "Bind",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "Bromine.Tester"
+            ],
+            "module": "Bromine.utils",
+            "namespace": "",
+            "file": "src/utils.js",
+            "line": 21,
+            "description": "this mixin automatically creates a `bound` collection of functions"
+        },
+        "Options": {
+            "name": "Options",
+            "shortname": "Options",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "Bromine.Test",
+                "Bromine.Tester"
+            ],
+            "module": "Bromine.utils",
+            "namespace": "",
+            "file": "src/utils.js",
+            "line": 43,
+            "description": "A simple mixin for providing and options argument.\nIf the object has a defaultOptions instance it will set them.\n\nmixing also provides the setOptions method.\nother than settting the options, any key with the on* signiture (onLoad, onComplete etc)\nwill be added as an event"
         }
     },
     "classitems": [
         {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 1,
-            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
-            "class": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 49,
-            "description": "removes the on* prefix from event names",
-            "itemtype": "method",
-            "name": "Events.removeOn",
-            "static": 1,
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "String"
-            },
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 64,
-            "description": "returns a structured data object about a type's pseudo-events",
-            "itemtype": "method",
-            "name": "getPseudo",
-            "access": "private",
-            "tagname": "",
-            "static": 1,
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "data",
-                "type": "Object"
-            },
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 87,
-            "description": "proccesses an event type, returning a valid data object from that name",
-            "itemtype": "method",
-            "name": "processType",
-            "static": 1,
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "data",
-                "type": "Object"
-            },
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 101,
-            "description": "cross-browser function to create event object for fire method\n\nCreated object will always have following properties:\n - dispatcher: a reference to dispatching object (since we can't use 'this')\n - args: arguments passed alongside the event\n - object_event: a flag set to true to easily check if this is an object event or a normal DOM event.",
-            "itemtype": "method",
-            "name": "Events.createEvent",
-            "static": 1,
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "dispatcher",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "args",
-                    "description": "",
-                    "type": "Mixed"
-                }
-            ],
-            "return": {
-                "description": "event object"
-            },
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 290,
-            "description": "Adds an event",
-            "itemtype": "method",
-            "name": "addEvent",
-            "params": [
-                {
-                    "name": "the",
-                    "description": "event type",
-                    "type": "String"
-                },
-                {
-                    "name": "a",
-                    "description": "function to add",
-                    "type": "Function"
-                }
-            ],
-            "chainable": 1,
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 320,
-            "description": "Helper to add multiple events at once",
-            "itemtype": "method",
-            "name": "addEvents",
-            "params": [
-                {
-                    "name": "literal",
-                    "description": "object of event types => callbacks",
-                    "type": "Object"
-                }
-            ],
-            "chainable": 1,
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 339,
-            "description": "dispatches an event",
-            "itemtype": "method",
-            "name": "fireEvent",
-            "params": [
-                {
-                    "name": "event",
-                    "description": "type",
-                    "type": "String"
-                },
-                {
-                    "name": "arguments",
-                    "description": "to pass with the event",
-                    "type": "Mixed"
-                }
-            ],
-            "chainable": 1,
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 378,
-            "description": "removes a function from an event",
-            "itemtype": "method",
-            "name": "removeEvent",
-            "params": [
-                {
-                    "name": "event",
-                    "description": "type",
-                    "type": "String"
-                },
-                {
-                    "name": "function",
-                    "description": "to remove from stack",
-                    "type": "Function"
-                }
-            ],
-            "chainable": 1,
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 401,
-            "description": "Adds an event for one execution, then removes it",
-            "itemtype": "method",
-            "name": "addEventOnce",
-            "params": [
-                {
-                    "name": "the",
-                    "description": "event type",
-                    "type": "String"
-                },
-                {
-                    "name": "a",
-                    "description": "function to add",
-                    "type": "Function"
-                }
-            ],
-            "chainable": 1,
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 423,
-            "description": "Fires a latched event",
-            "itemtype": "method",
-            "name": "fireLatchedEvent",
-            "params": [
-                {
-                    "name": "the",
-                    "description": "event type",
-                    "type": "String"
-                },
-                {
-                    "name": "arguments",
-                    "description": "to pass with the event",
-                    "type": "Mixed"
-                }
-            ],
-            "chainable": 1,
-            "class": "Events",
-            "module": "Events"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 473,
-            "description": "collection of bound function",
-            "itemtype": "property",
-            "name": "bound",
-            "type": "{Object}",
-            "access": "protected",
-            "tagname": "",
-            "class": "Bind",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 506,
-            "itemtype": "method",
-            "name": "setOptions",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "chainable": 1,
-            "class": "Options",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 525,
-            "description": "calculates the offsets of an element relevant to one of it's parent",
-            "itemtype": "method",
-            "name": "calculateOffsets",
-            "static": 1,
-            "params": [
-                {
-                    "name": "element",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "container",
-                    "description": "default to `document.body`",
-                    "type": "Element",
-                    "optional": true
-                }
-            ],
-            "return": {
-                "description": "{left, top}",
-                "type": "Object"
-            },
-            "class": "Options",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 558,
-            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
-            "class": "Options",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 599,
-            "description": "holds a stack of reported results",
-            "itemtype": "property",
-            "name": "results",
-            "type": "{Array}",
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 616,
-            "description": "fires when test starts running. Latched",
-            "itemtype": "event",
-            "name": "start",
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 620,
-            "description": "fires if and when the test has finished running successfuly",
-            "itemtype": "event",
-            "name": "done",
-            "params": [
-                {
-                    "name": "args",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "results",
-                    "description": "the results of the test",
-                    "type": "Array"
-                }
-            ],
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 626,
-            "description": "fires if and when the test has finished running but failed",
-            "itemtype": "event",
-            "name": "fail",
-            "params": [
-                {
-                    "name": "args",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "results",
-                    "description": "the results of the test",
-                    "type": "Array"
-                }
-            ],
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 632,
-            "description": "fires on object destruction",
-            "itemtype": "event",
-            "name": "destory",
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 647,
-            "description": "runs the tests",
-            "itemtype": "method",
-            "name": "run",
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 657,
-            "description": "logs a result to the test",
-            "itemtype": "method",
-            "name": "log",
-            "params": [
-                {
-                    "name": "params",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 666,
-            "description": "Called when tests are done",
-            "itemtype": "method",
-            "name": "done",
-            "params": [
-                {
-                    "name": "state",
-                    "description": "whether test passed or failed",
-                    "type": "Bool"
-                },
-                {
-                    "name": "message",
-                    "description": "only used on failure",
-                    "type": "String",
-                    "optional": true
-                }
-            ],
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 687,
-            "description": "signifies a test failure. Will stop any more steps from running",
-            "itemtype": "method",
-            "name": "",
-            "type": "Fail",
-            "params": [
-                {
-                    "name": "message",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 725,
-            "description": "calls the next function in the stack",
-            "itemtype": "method",
-            "name": "next",
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 739,
-            "description": "calls the current function in the stack",
-            "itemtype": "method",
-            "name": "current",
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 750,
-            "description": "calls the previous function in the stack",
-            "itemtype": "method",
-            "name": "prev",
-            "class": "Bromine.Test",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 793,
-            "description": "fires when a test starts running",
-            "itemtype": "event",
-            "name": "start",
-            "params": [
-                {
-                    "name": "args",
-                    "description": "",
-                    "props": [
-                        {
-                            "name": "name",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "test",
-                            "description": "",
-                            "type": "Bromine.Test"
-                        }
-                    ]
-                }
-            ],
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 800,
-            "description": "fires when all tests are done",
-            "itemtype": "event",
-            "name": "done",
-            "params": [
-                {
-                    "name": "args",
-                    "description": "",
-                    "props": [
-                        {
-                            "name": "results",
-                            "description": "",
-                            "type": "Array"
-                        }
-                    ]
-                }
-            ],
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 806,
-            "description": "fires when a test is done successfuly",
-            "itemtype": "event",
-            "name": "testDone",
-            "params": [
-                {
-                    "name": "args",
-                    "description": "",
-                    "props": [
-                        {
-                            "name": "name",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "test",
-                            "description": "",
-                            "type": "Bromine.Test"
-                        },
-                        {
-                            "name": "results",
-                            "description": "",
-                            "type": "Array"
-                        }
-                    ]
-                }
-            ],
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 814,
-            "description": "fires when a test is done but failed",
-            "itemtype": "event",
-            "name": "testFAil",
-            "params": [
-                {
-                    "name": "args",
-                    "description": "",
-                    "props": [
-                        {
-                            "name": "name",
-                            "description": "",
-                            "type": "String"
-                        },
-                        {
-                            "name": "test",
-                            "description": "",
-                            "type": "Bromine.Test"
-                        },
-                        {
-                            "name": "results",
-                            "description": "",
-                            "type": "Array"
-                        }
-                    ]
-                }
-            ],
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 829,
-            "description": "register a test",
-            "itemtype": "method",
-            "name": "registerTest",
-            "params": [
-                {
-                    "name": "name",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "paramaters",
-                    "description": "for Test constructor or a Test instance",
-                    "type": "Object|Bromine.Test"
-                }
-            ],
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 860,
-            "description": "returns the tests stack",
-            "itemtype": "method",
-            "name": "getTests",
-            "return": {
-                "description": "tests",
-                "type": "Array"
-            },
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 869,
-            "description": "starts running tests",
-            "itemtype": "method",
-            "name": "run",
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 879,
-            "description": "resets test runner",
-            "itemtype": "method",
-            "name": "reset",
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 939,
-            "description": "registers a Test reporter",
-            "itemtype": "method",
-            "name": "registerReporter",
-            "params": [
-                {
-                    "name": "Bromine.Reporter",
-                    "description": ""
-                }
-            ],
-            "class": "Bromine.Tester",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 966,
-            "description": "Dispatches a DOM event on a given element",
-            "itemtype": "method",
-            "name": "fireEvent",
-            "static": 1,
-            "params": [
-                {
-                    "name": "el",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "Bromine",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 989,
-            "description": "Fires a mouse event on element\n\nAdditional parameters can be:\n \n x, y, details, button, ctrl, alt, shift, meta, relatedTarget\n\n if no x/y supplied, will use element position",
-            "itemtype": "method",
-            "name": "fireMouseEvent",
-            "static": 1,
-            "params": [
-                {
-                    "name": "el",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "params",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "Bromine",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 1038,
-            "description": "Fires a keyboard event on element\n\nAdditional parameters can be:\n \n ctrl, alt, shift, meta, key, charCode",
-            "itemtype": "method",
-            "name": "fireKeyboardEvent",
-            "static": 1,
-            "params": [
-                {
-                    "name": "el",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "params",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "Bromine",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.js",
-            "line": 1074,
-            "description": "Dispatches a DOM event on an element, then dispatches a callback after given delay",
-            "itemtype": "method",
-            "name": "fireEventWithDelay",
-            "static": 1,
-            "params": [
-                {
-                    "name": "el",
-                    "description": "",
-                    "type": "Element"
-                },
-                {
-                    "name": "type",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "callback",
-                    "description": "",
-                    "type": "Function"
-                },
-                {
-                    "name": "delay",
-                    "description": "",
-                    "type": "Int",
-                    "optional": true,
-                    "optdefault": "500"
-                }
-            ],
-            "class": "Bromine",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/bin/bromine.min.js",
-            "line": 1,
-            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.   \n */!function(){function f(e,t){var n,r;if(e.indexOf)return e.indexOf(t);for(n=0;r=e[n];n++)if(r==t)return n;return-1}function l(e){if(u.strict)throw new Error(e);\"console\"in window&&(console.error?console.error(e):console.warn?console.warn(e):console.log(e))}function c(e){return e.replace(/^on([A-Z])/,function(e,t){return t.toLowerCase()})}function h(e){var n=e.match(t);return e.split(\":\").length>2&&l(\"Library does not support multiple pseudo events\"),{name:n[1],pseudo:n[2],args:n[3]}}function p(e){return h(c(e))}function d(t,n,r){var i;return e?(i=document.createEvent(\"UIEvents\"),i.initUIEvent(t,!1,!1,window,1)):i={},i.dispatcher=n,i.args=r,i.object_event=!0,i}function v(t,n,r){e?t.$event_element.addEventListener(n,r,!1):t.$events[n]?t.$events[n].indexOf(r)==-1&&t.$evetns[n].push(r):t.$events[n]=[r]}function m(t,n,r){var i,s;if(e)t.$event_element.dispatchEvent(r);else for(i=0;s=t.$events[n];i++)s.apply(null,[r])}function g(t,n,r){var i;if(e)t.$event_element.removeEventListener(n,r,!1);else{if(!t.$events[n])return;i=f(t.$events[n],r);if(i<0)return;t.$events[n].splice(i,1)}}var e=\"createEvent\"in document,t=/([^:]+)(?:\\:([^(]*)(?:\\((.*)\\))?)?/,n,r,i,s,o,u,a;u=function(u){var f=this;e?this.$event_element=u||document.createElement(\"events\"):this.$events={},this.$latched={},this.$once={},this.addEvent=n,this.addEvents=r,this.fireEvent=i,this.removeEvent=s,this.addEventOnce=o,this.fireLatchedEvent=a,this.addEvent(\"destroy:delay(0)\",function(){var e=\"$event_element $latched $events $once addEvent removeEvent addEventOnce fireLatchedEvent\".split(\" \"),t,n;for(t=0;n=e[t];t++)f[n]=null})},u.removeOn=c,u.getPseudos=h,u.processType=p,u.createEvent=d,u.strict=!1,u.Pseudoes={once:{addEvent:function(e,t){return this.addEventOnce(e,t)}},latched:{fireEvent:function(e,t){return this.fireLatchedEvent(e,t)}},times:{addEvent:function(e,t,n){var r=0,i=this;this.addEvent(e,function s(){t.apply(null,arguments),r+=1,r==n&&i.removeEvent(e,s)})}},delay:{addEvent:function(e,t,n){this.addEvent(e,function(){setTimeout(t,n)})},fireEvent:function(e,t,n){var r=this;setTimeout(function(){r.fireEvent(e,t)},n)}}},n=function(t,n){var r=p(t),i=u.Pseudoes[r.pseudo]&&u.Pseudoes[r.pseudo].addEvent,s=this.$latched[r.name]&&this.$latched[r.name].args,o;return i?i.apply(this,[r.name,n,r.args]):(v(this,r.name,n),this.$latched&&this.$latched[r.name]&&(o=d(r.name,this,s),n.apply(null,[o])),this)},r=function(t){var n;for(n in t)t.hasOwnProperty(n)&&this.addEvent(n,t[n]);return this},i=function(t,n){var r=p(t),i=u.Pseudoes[r.pseudo]&&u.Pseudoes[r.pseudo].fireEvent,s,o,a,f;if(i)return i.call(this,r.name,n);a=this.$once[r.name],this.$once[r.name]=null,s=d(r.name,this,n),m(this,r.name,s);if(!a)return this;while(o=a.pop())this.removeEvent(r.name,o,!0);return this},s=function(t,n,r){var i=p(t),s;return g(this,i.name,n),!r&&this.$once[i.name]&&(s=this.$once[i.name].indexOf(n))>-1&&this.$once[i.name].splice(s,1),this},o=function(t,n){var r=this,i=p(t);return this.$once[i.name]||(this.$once[i.name]=[]),this.$once[i.name].indexOf(n)==-1&&this.$once[i.name].push(n),this.addEvent(i.name,n)},a=function(t,n){return this.$latched||(this.$latched={}),this.$latched[t]={args:n},this.fireEvent(t,n),this},this.Events=u}.call(this),!function(){var e={};e.Bind=function(){var e,t;this.bound={};if(!this.bind)return;for(e=0;t=this.bind[e];e++)this[t]&&(this.bound[t]=this[t].bind(this))},e.Options=function(){var n;this.options||(this.options={});for(n in this.defaultOptions)this.defaultOptions.hasOwnProperty(n)&&(this.options[n]=this.defaultOptions[n]);this.setOptions=function(t){var n;if(typeof t!=\"object\"||t===null)return;for(n in t)t.hasOwnProperty(n)&&(n in this.options&&(this.options[n]=t[n]),/^on[A-Z][a-zA-Z]+/.test(n)&&this.addEvent&&typeof t[n]==\"function\"&&this.addEvent(e.Events.removeOn(n),t[n]));return this}},e.Events=Events,e.calculateOffsets=function(e,t){var n=e,r=0,i=0;t||(t=document.body);while(n&&n!=t)r+=n.offsetLeft,i+=n.offsetTop,n=n.offsetParent;return{left:r,top:i}},this.Bromine={utils:e}}.call(this),!function(e,t){function r(e){t.Options.call(this),t.Events.call(this),this.setOptions(e),this.stack=this.options.tests,this.description=this.options.description,this.results=[],this.next=this.next.bind(this),this.current=this.current.bind(this),this.prev=this.prev.bind(this),this.test_index=0,this.depend=e.depend,e.init&&e.init.call(this)}function i(e){t.Bind.call(this),t.Options.call(this),t.Events.call(this),this.setOptions(e),this.tests={},this.depends=[],this.stack=[],this.results={}}function s(){var e=document.createEventObject();return e}var n=\"addEventListener\"in document;r.prototype={constructor:r,defaultOptions:{init:function(){},destroy:function(){},tests:[],depend:\"\",fail_timeout:1e4},run:function(){this.fireEvent(\"start:latched\"),this.next()},log:function(e){this.results.push(e)},done:function(e,t){this.tests_done=!0,clearTimeout(this.timeout_handle);if(e===!1)return this.fail(t);this.fireEvent(\"done:latched\",{results:this.results}),this.destroy()},fail:function(e){this.tests_done=!0,clearTimeout(this.timeout_handle),this.log({success:!1,msg:e}),this.fireEvent(\"fail\",{results:this.results}),this.destroy()},destroy:function(){this.fireEvent(\"destroy\"),this.options.destroy()},setTimeout:function(){var e=this;this.options.fail_timeout&&(clearTimeout(this.timeout_handle),this.timeout_handle=setTimeout(function(){e.fail(\"Test timed out\")},this.options.fail_timeout))},next:function(){var e=this.stack[this.test_index++];return this.tests_done?null:(this.setTimeout(),e&&e.apply(this,arguments))},current:function(){var e=this.test_index===0?this.stack[this.test_index]:this.stack[this.test_index-1];return this.tests_done?null:(this.setTimeout(),e&&e.apply(this,arguments))},prev:function(){var e;return this.tests_done?null:(this.test_index-=1,this.test_index<1&&(this.test_index=1),e=this.stack[this.test_index-1],this.setTimeout(),e&&e.apply(this,arguments))}},i.prototype={constructor:i,defaultOptions:{exclude:[],run_only:[]},bind:[\"testDone\",\"testFailed\"],registerTest:function(e,t){var n=this.tests[e]=t instanceof r?t:new r(t),i=this;n.addEvents({start:function(e){i.fireEvent(\"testStart\",{name:e.dispatcher.name,test:e.dispatcher})},done:this.bound.testDone,fail:this.bound.testFailed}),n.name=e,this.depends[e]||(this.depends[e]=[]),t.depend?(this.depends[t.depend]||(this.depends[t.depend]=[]),this.depends[t.depend].push(e)):this.stack.push(e)},getTests:function(){return this.stack},run:function(){this.original_stack=JSON.stringify(this.stack),this.stop=!1,this.next()},reset:function(){this.stop=!0,this.stack=JSON.parse(this.original_stack)},next:function(){var e=this.stack.shift(),t=this.tests[e];if(this.stop)return;if(!e){this.fireEvent(\"done\",{results:this.results});return}if(this.options.exclude.indexOf(e)>-1)return this.next();if(this.options.run_only.length&&this.options.run_only.indexOf(e)==-1)return this.next();this.tests[e].run()},testDone:function(e){var t=this.depends[e.dispatcher.name],n,r;this.fireEvent(\"testDone\",{name:e.dispatcher.name,test:e.dispatcher,results:e.args.results});for(n=0;r=t[n];n++){if(!r)continue;this.stack.push(r)}this.results[e.dispatcher.name]=e.dispatcher.results,this.next()},testFailed:function(e){var t=this.depends[e.dispatcher.name],n,r;this.fireEvent(\"testFail\",{name:e.dispatcher.name,test:e.dispatcher,results:e.args.results});for(n=0;r=t[n];n++)this.tests[r].done(!1,\"dependancy failed: \"+r);this.results[e.dispatcher.name]=e.dispatcher.results,this.next()},registerReporter:function(e){var t=n?e:e.handleEvent;this.addEvents({testStart:t,testDone:t,testFail:t,done:t})}},Bromine.fireEvent=function(t,n){var r;document.createEventObject?(r=s(),t.fireEvent(\"on\"+n,r)):(r=document.createEvent(\"HTMLEvents\"),r.initEvent(n,!0,!0),t.dispatchEvent(r))},Bromine.fireMouseEvent=function(e,n,r){r||(r={});var i,o=t.calculateOffsets(e),u=\"details\"in r?r.details:1,a=\"x\"in r?r.x:o.left,f=\"y\"in r?r.y:o.top,l=\"button\"in r?r.button:0;document.createEvent?(i=document.createEvent(\"MouseEvents\"),i.initMouseEvent(n,!0,!0,window,u,a,f,a,f,r.ctrl,r.alt,r.shift,r.meta,l,r.relatedTarget),e.dispatchEvent(i)):(i=s(),i.screenX=a,i.screenY=f,i.clientX=a,i.clientY=f,i.ctrlKey=r.ctrl,i.altKey=r.alt,i.shiftKey=r.shift,i.metaKey=r.meta,i.button=l,i.relatedTarget=r.relatedTarget,i.detail=u,e.fireEvent(\"on\"+n,i))},Bromine.fireKeyboardEvent=function(e,t,n){var r;n||(n={}),document.createEvent?(r=document.createEvent(\"KeyboardEvent\"),r.initKeyEvent(t,!0,!0,null,n.ctrl,n.alt,n.shift,n.meta,n.key,n.charCode),e.dispatchEvent(r)):(r=s(),r.ctrlKey=n.ctrl,r.altKey=n.alt,r.shiftKey=n.shift,r.metaKey=n.meta,r.keyCode=n.key,r.charCode=n.charCode,e.fireEvent(\"on\"+t,r))},Bromine.fireEventWithDelay=function(t,n,r,i){var s=i||500;Bromine.fireEvent(t,n),window.setTimeout(r,s)},Bromine.Tester=i,Bromine.Test=r}.apply(Bromine,[Bromine,Bromine.utils]),!function(){function e(){}e.prototype={constructor:e,handleEvent:function(e){var t=this[e.type];switch(e.type){case\"done\":t(e.args.results);break;case\"testStart\":t(e.args.name,e.args.test);break;default:t(e.args.name,e.args.results,e.args.test)}},done:function(e,t){console.log(\"Test Runner Done\",[e,t])},testStart:function(e,t){console.log(\"Test Start\",[e,res])},testDone:function(e,t,n){console.log(\"Test Done\",[e,t])},testFail:function(e,t,n){console.log(\"Test Fail\",[e,t])}},Bromine.Reporter=e}.call(Bromine);",
-            "class": "Events",
-            "module": "Bromine"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 35,
             "description": "removes the on* prefix from event names",
             "itemtype": "method",
@@ -1057,7 +279,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 50,
             "description": "returns a structured data object about a type's pseudo-events",
             "itemtype": "method",
@@ -1080,7 +302,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 73,
             "description": "proccesses an event type, returning a valid data object from that name",
             "itemtype": "method",
@@ -1103,7 +325,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 87,
             "description": "cross-browser function to create event object for fire method\n\nCreated object will always have following properties:\n - dispatcher: a reference to dispatching object (since we can't use 'this')\n - args: arguments passed alongside the event\n - object_event: a flag set to true to easily check if this is an object event or a normal DOM event.",
             "itemtype": "method",
@@ -1135,7 +357,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 276,
             "description": "Adds an event",
             "itemtype": "method",
@@ -1157,7 +379,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 306,
             "description": "Helper to add multiple events at once",
             "itemtype": "method",
@@ -1174,7 +396,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 325,
             "description": "dispatches an event",
             "itemtype": "method",
@@ -1196,7 +418,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 364,
             "description": "removes a function from an event",
             "itemtype": "method",
@@ -1218,7 +440,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 387,
             "description": "Adds an event for one execution, then removes it",
             "itemtype": "method",
@@ -1240,7 +462,7 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/lib/Events/Events.js",
+            "file": "lib/Events/Events.js",
             "line": 409,
             "description": "Fires a latched event",
             "itemtype": "method",
@@ -1262,14 +484,14 @@
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 1,
             "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
             "class": "Bromine.Test",
             "module": "Events"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 42,
             "description": "holds a stack of reported results",
             "itemtype": "property",
@@ -1279,7 +501,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 59,
             "description": "fires when test starts running. Latched",
             "itemtype": "event",
@@ -1288,7 +510,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 63,
             "description": "fires if and when the test has finished running successfuly",
             "itemtype": "event",
@@ -1309,7 +531,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 69,
             "description": "fires if and when the test has finished running but failed",
             "itemtype": "event",
@@ -1330,7 +552,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 75,
             "description": "fires on object destruction",
             "itemtype": "event",
@@ -1339,7 +561,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 90,
             "description": "runs the tests",
             "itemtype": "method",
@@ -1348,7 +570,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 100,
             "description": "logs a result to the test",
             "itemtype": "method",
@@ -1364,7 +586,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 109,
             "description": "Called when tests are done",
             "itemtype": "method",
@@ -1386,7 +608,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 130,
             "description": "signifies a test failure. Will stop any more steps from running",
             "itemtype": "method",
@@ -1403,7 +625,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 168,
             "description": "calls the next function in the stack",
             "itemtype": "method",
@@ -1412,7 +634,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 182,
             "description": "calls the current function in the stack",
             "itemtype": "method",
@@ -1421,7 +643,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 193,
             "description": "calls the previous function in the stack",
             "itemtype": "method",
@@ -1430,7 +652,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 236,
             "description": "fires when a test starts running",
             "itemtype": "event",
@@ -1457,7 +679,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 243,
             "description": "fires when all tests are done",
             "itemtype": "event",
@@ -1479,7 +701,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 249,
             "description": "fires when a test is done successfuly",
             "itemtype": "event",
@@ -1511,7 +733,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 257,
             "description": "fires when a test is done but failed",
             "itemtype": "event",
@@ -1543,7 +765,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 272,
             "description": "register a test",
             "itemtype": "method",
@@ -1564,7 +786,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 303,
             "description": "returns the tests stack",
             "itemtype": "method",
@@ -1577,7 +799,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 312,
             "description": "starts running tests",
             "itemtype": "method",
@@ -1586,7 +808,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 322,
             "description": "resets test runner",
             "itemtype": "method",
@@ -1595,7 +817,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 382,
             "description": "registers a Test reporter",
             "itemtype": "method",
@@ -1610,7 +832,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 409,
             "description": "Dispatches a DOM event on a given element",
             "itemtype": "method",
@@ -1632,7 +854,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 432,
             "description": "Fires a mouse event on element\n\nAdditional parameters can be:\n \n x, y, details, button, ctrl, alt, shift, meta, relatedTarget\n\n if no x/y supplied, will use element position",
             "itemtype": "method",
@@ -1659,7 +881,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 481,
             "description": "Fires a keyboard event on element\n\nAdditional parameters can be:\n \n ctrl, alt, shift, meta, key, charCode",
             "itemtype": "method",
@@ -1686,7 +908,7 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/Bromine.js",
+            "file": "src/Bromine.js",
             "line": 517,
             "description": "Dispatches a DOM event on an element, then dispatches a callback after given delay",
             "itemtype": "method",
@@ -1720,14 +942,14 @@
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/license.js",
+            "file": "src/license.js",
             "line": 1,
             "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
             "class": "Bind",
             "module": "Bromine"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/utils.js",
+            "file": "src/utils.js",
             "line": 28,
             "description": "collection of bound function",
             "itemtype": "property",
@@ -1739,7 +961,7 @@
             "module": "Bromine.utils"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/utils.js",
+            "file": "src/utils.js",
             "line": 61,
             "itemtype": "method",
             "name": "setOptions",
@@ -1755,7 +977,7 @@
             "module": "Bromine.utils"
         },
         {
-            "file": "/Users/arieh/www/Bromine/src/utils.js",
+            "file": "src/utils.js",
             "line": 80,
             "description": "calculates the offsets of an element relevant to one of it's parent",
             "itemtype": "method",
@@ -1779,1308 +1001,6 @@
                 "type": "Object"
             },
             "class": "Options",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/JasmineAdapter.js",
-            "line": 1,
-            "fileoverview": "Jasmine JsTestDriver Adapter.",
-            "author": "misko@hevery.com (Misko Hevery)",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 3,
-            "description": "Top level namespace for Jasmine, a lightweight JavaScript BDD/spec/testing framework.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 10,
-            "access": "private",
-            "tagname": "",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 17,
-            "description": "Use <code>jasmine.undefined</code> instead of <code>undefined</code>, since <code>undefined</code> is just\na plain old variable and may be redefined by somebody else.",
-            "access": "private",
-            "tagname": "",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 25,
-            "description": "Show diagnostic messages in the console if set to true",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 31,
-            "description": "Default interval in milliseconds for event loop yields (e.g. to allow network activity or to refresh the screen with the HTML-based runner). Small values here may result in slow test running. Zero means no updates until all tests have completed.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 37,
-            "description": "Default timeout interval in milliseconds for waitsFor() blocks.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 50,
-            "description": "Allows for bound functions to be compared.  Internal use only.",
-            "ignore": "",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "base",
-                    "description": "bound 'this' for the function",
-                    "type": "Object"
-                },
-                {
-                    "name": "name",
-                    "description": "function to find",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 114,
-            "description": "Getter for the Jasmine environment. Ensures one gets created",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 122,
-            "ignore": "",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "value",
-                    "description": ""
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "Boolean"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 132,
-            "ignore": "",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "value",
-                    "description": ""
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "Boolean"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 142,
-            "ignore": "",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "value",
-                    "description": ""
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "Boolean"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 152,
-            "ignore": "",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "typeName",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "value",
-                    "description": ""
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "Boolean"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 163,
-            "description": "Pretty printer for expecations.  Takes any object and turns it into a human-readable string.",
-            "params": [
-                {
-                    "name": "value",
-                    "description": "an object to be outputted",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "String"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 175,
-            "description": "Returns true if the object is a DOM Node.",
-            "params": [
-                {
-                    "name": "obj",
-                    "description": "object to check",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "Boolean"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 185,
-            "description": "Returns a matchable 'generic' object of the class type.  For use in expecations of type when values don't matter.",
-            "example": [
-                "\n// don't care about which function is passed in, as long as it's a function\nexpect(mySpy).toHaveBeenCalledWith(jasmine.any(Function));"
-            ],
-            "params": [
-                {
-                    "name": "clazz",
-                    "description": "",
-                    "type": "Class"
-                }
-            ],
-            "return": {
-                "description": "matchable object of the type clazz"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 199,
-            "description": "Returns a matchable subset of a hash/JSON object. For use in expectations when you don't care about all of the\nattributes on the object.",
-            "example": [
-                "\n// don't care about any other attributes than foo.\nexpect(mySpy).toHaveBeenCalledWith(jasmine.hashContaining({foo: \"bar\"});"
-            ],
-            "params": [
-                {
-                    "name": "sample",
-                    "description": "sample",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "matchable object for the sample"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 214,
-            "description": "Jasmine Spies are test doubles that can act as stubs, spies, fakes or when used in an expecation, mocks.\n\nSpies should be created in test setup, before expectations.  They can then be checked, using the standard Jasmine\nexpectation syntax. Spies can be checked if they were called or not and what the calling params were.\n\nA Spy has the following fields: wasCalled, callCount, mostRecentCall, and argsForCall (see docs).\n\nSpies are torn down at the end of every spec.\n\nNote: Do <b>not</b> call new jasmine.Spy() directly - a spy must be created using spyOn, jasmine.createSpy or jasmine.createSpyObj.",
-            "example": [
-                "\n// a stub\nvar myStub = jasmine.createSpy('myStub');  // can be used anywhere\n\n// spy example\nvar foo = {\n  not: function(bool) { return !bool; }\n}\n\n// actual foo.not will not be called, execution stops\nspyOn(foo, 'not');\n\n// foo.not spied upon, execution will continue to implementation\nspyOn(foo, 'not').andCallThrough();\n\n// fake example\nvar foo = {\n  not: function(bool) { return !bool; }\n}\n\n// foo.not(val) will return val\nspyOn(foo, 'not').andCallFake(function(value) {return value;});\n\n// mock example\nfoo.not(7 == 7);\nexpect(foo.not).toHaveBeenCalled();\nexpect(foo.not).toHaveBeenCalledWith(true);"
-            ],
-            "is_constructor": 1,
-            "see": [
-                "spyOn",
-                "jasmine.createSpy",
-                "jasmine.createSpyObj"
-            ],
-            "params": [
-                {
-                    "name": "name",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 259,
-            "description": "The name of the spy, if provided.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 263,
-            "description": "Is this Object a spy?",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 267,
-            "description": "The actual function this spy stubs.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 272,
-            "description": "Tracking of the most recent call to the spy.",
-            "example": [
-                "\nvar mySpy = jasmine.createSpy('foo');\nmySpy(1, 2);\nmySpy.mostRecentCall.args = [1, 2];"
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 281,
-            "description": "Holds arguments for each call to the spy, indexed by call count",
-            "example": [
-                "\nvar mySpy = jasmine.createSpy('foo');\nmySpy(1, 2);\nmySpy(7, 8);\nmySpy.mostRecentCall.args = [7, 8];\nmySpy.argsForCall[0] = [1, 2];\nmySpy.argsForCall[1] = [7, 8];"
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 295,
-            "description": "Tells a spy to call through to the actual implementation.",
-            "example": [
-                "\nvar foo = {\n  bar: function() { // do some stuff }\n}\n\n// defining a spy on an existing property: foo.bar\nspyOn(foo, 'bar').andCallThrough();"
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 311,
-            "description": "For setting the return value of a spy.",
-            "example": [
-                "\n// defining a spy from scratch: foo() returns 'baz'\nvar foo = jasmine.createSpy('spy on foo').andReturn('baz');\n\n// defining a spy on an existing property: foo.bar() returns 'baz'\nspyOn(foo, 'bar').andReturn('baz');"
-            ],
-            "params": [
-                {
-                    "name": "value",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 330,
-            "description": "For throwing an exception when a spy is called.",
-            "example": [
-                "\n// defining a spy from scratch: foo() throws an exception w/ message 'ouch'\nvar foo = jasmine.createSpy('spy on foo').andThrow('baz');\n\n// defining a spy on an existing property: foo.bar() throws an exception w/ message 'ouch'\nspyOn(foo, 'bar').andThrow('baz');"
-            ],
-            "params": [
-                {
-                    "name": "exceptionMsg",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 349,
-            "description": "Calls an alternate implementation when a spy is called.",
-            "example": [
-                "\nvar baz = function() {\n  // do some stuff, return something\n}\n// defining a spy from scratch: foo() calls the function baz\nvar foo = jasmine.createSpy('spy on foo').andCall(baz);\n\n// defining a spy on an existing property: foo.bar() calls an anonymnous function\nspyOn(foo, 'bar').andCall(function() { return 'baz';} );"
-            ],
-            "params": [
-                {
-                    "name": "fakeFunc",
-                    "description": "",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 369,
-            "description": "Resets all of a spy's the tracking variables so that it can be used again.",
-            "example": [
-                "\nspyOn(foo, 'bar');\n\nfoo.bar();\n\nexpect(foo.bar.callCount).toEqual(1);\n\nfoo.bar.reset();\n\nexpect(foo.bar.callCount).toEqual(0);"
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 415,
-            "description": "Determines whether an object is a spy.",
-            "params": [
-                {
-                    "name": "putativeSpy",
-                    "description": "",
-                    "type": "jasmine.Spy|Object"
-                }
-            ],
-            "return": {
-                "description": "",
-                "type": "Boolean"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 425,
-            "description": "Creates a more complicated spy: an Object that has every property a function that is a spy.  Used for stubbing something\nlarge in one call.",
-            "params": [
-                {
-                    "name": "baseName",
-                    "description": "name of spy class",
-                    "type": "String"
-                },
-                {
-                    "name": "methodNames",
-                    "description": "array of names of methods to make spies",
-                    "type": "Array"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 443,
-            "description": "All parameters are pretty-printed and concatenated together, then written to the current spec's output.\n\nBe careful not to leave calls to <code>jasmine.log</code> in production code.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 453,
-            "description": "Function that installs a spy on an existing object's method name.  Used within a Spec to create a spy.",
-            "example": [
-                "\n// spy example\nvar foo = {\n  not: function(bool) { return !bool; }\n}\nspyOn(foo, 'not'); // actual foo.not will not be called, execution stops"
-            ],
-            "see": [
-                "jasmine.createSpy"
-            ],
-            "params": [
-                {
-                    "name": "obj",
-                    "description": ""
-                },
-                {
-                    "name": "methodName",
-                    "description": ""
-                }
-            ],
-            "return": {
-                "description": "a Jasmine spy that can be chained with all spy methods"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 473,
-            "description": "Creates a Jasmine spec that will be added to the current suite.\n\n// TODO: pending tests",
-            "example": [
-                "\nit('should be true', function() {\n  expect(true).toEqual(true);\n});"
-            ],
-            "params": [
-                {
-                    "name": "desc",
-                    "description": "description of this specification",
-                    "type": "String"
-                },
-                {
-                    "name": "func",
-                    "description": "defines the preconditions and expectations of the spec",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 491,
-            "description": "Creates a <em>disabled</em> Jasmine spec.\n\nA convenience method that allows existing specs to be disabled temporarily during development.",
-            "params": [
-                {
-                    "name": "desc",
-                    "description": "description of this specification",
-                    "type": "String"
-                },
-                {
-                    "name": "func",
-                    "description": "defines the preconditions and expectations of the spec",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 504,
-            "description": "Starts a chain for a Jasmine expectation.\n\nIt is passed an Object that is the actual value and should chain to one of the many\njasmine.Matchers functions.",
-            "params": [
-                {
-                    "name": "actual",
-                    "description": "Actual value to test against and expected value",
-                    "type": "Object"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 517,
-            "description": "Defines part of a jasmine spec.  Used in cominbination with waits or waitsFor in asynchrnous specs.",
-            "params": [
-                {
-                    "name": "func",
-                    "description": "Function that defines part of a jasmine spec.",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 527,
-            "description": "Waits a fixed time period before moving to the next block.",
-            "deprecated": true,
-            "deprecationMessage": "Use waitsFor() instead",
-            "params": [
-                {
-                    "name": "timeout",
-                    "description": "milliseconds to wait",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 538,
-            "description": "Waits for the latchFunction to return true before proceeding to the next block.",
-            "params": [
-                {
-                    "name": "latchFunction",
-                    "description": "",
-                    "type": "Function"
-                },
-                {
-                    "name": "optional_timeoutMessage",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "optional_timeout",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 550,
-            "description": "A function that is called before each spec in a suite.\n\nUsed for spec setup, including validating assumptions.",
-            "params": [
-                {
-                    "name": "beforeEachFunction",
-                    "description": "",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 562,
-            "description": "A function that is called after each spec in a suite.\n\nUsed for restoring any state that is hijacked during spec execution.",
-            "params": [
-                {
-                    "name": "afterEachFunction",
-                    "description": "",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 574,
-            "description": "Defines a suite of specifications.\n\nStores the description and all defined specs in the Jasmine environment as one suite of specs. Variables declared\nare accessible by calls to beforeEach, it, and afterEach. Describe blocks can be nested, allowing for specialization\nof setup in some tests.",
-            "example": [
-                "\n// TODO: a simple suite\n\n// TODO: a simple suite with a nested describe block"
-            ],
-            "params": [
-                {
-                    "name": "description",
-                    "description": "A string, usually the class under test.",
-                    "type": "String"
-                },
-                {
-                    "name": "specDefinitions",
-                    "description": "function that defines several specs.",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 594,
-            "description": "Disables a suite of specifications.  Used to disable some suites in a file, or files, temporarily during development.",
-            "params": [
-                {
-                    "name": "description",
-                    "description": "A string, usually the class under test.",
-                    "type": "String"
-                },
-                {
-                    "name": "specDefinitions",
-                    "description": "function that defines several specs.",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 633,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 638,
-            "description": "Declare that a child class inherit it's prototype from the parent class.",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "childClass",
-                    "description": "",
-                    "type": "Function"
-                },
-                {
-                    "name": "parentClass",
-                    "description": "",
-                    "type": "Function"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 646,
-            "access": "private",
-            "tagname": "",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 700,
-            "description": "Environment for Jasmine",
-            "is_constructor": 1,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 738,
-            "return": {
-                "description": "an object containing jasmine version build info, if set."
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 749,
-            "return": {
-                "description": "string containing jasmine version build info, if set."
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 766,
-            "return": {
-                "description": "a sequential integer starting at 0"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 773,
-            "return": {
-                "description": "a sequential integer starting at 0"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 780,
-            "description": "Register a reporter to receive status updates from Jasmine.",
-            "params": [
-                {
-                    "name": "reporter",
-                    "description": "An object which will receive status updates.",
-                    "type": "jasmine.Reporter"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 977,
-            "is_constructor": 1,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1008,
-            "description": "Blocks are functions with executable code that make up a spec.",
-            "is_constructor": 1,
-            "params": [
-                {
-                    "name": "env",
-                    "description": "",
-                    "type": "jasmine.Env"
-                },
-                {
-                    "name": "func",
-                    "description": "",
-                    "type": "Function"
-                },
-                {
-                    "name": "spec",
-                    "description": "",
-                    "type": "jasmine.Spec"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1030,
-            "is_constructor": 1,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1132,
-            "is_constructor": 1,
-            "params": [
-                {
-                    "name": "env",
-                    "description": "",
-                    "type": "jasmine.Env"
-                },
-                {
-                    "name": "actual",
-                    "description": ""
-                },
-                {
-                    "name": "spec",
-                    "description": "",
-                    "type": "jasmine.Spec"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1209,
-            "description": "toBe: compares the actual to the expected using ===",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": ""
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1217,
-            "description": "toNotBe: compares the actual to the expected using !==",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": ""
-                }
-            ],
-            "deprecated": true,
-            "deprecationMessage": "as of 1.0. Use not.toBe() instead.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1226,
-            "description": "toEqual: compares the actual to the expected using common sense equality. Handles Objects, Arrays, etc.",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": ""
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1235,
-            "description": "toNotEqual: compares the actual to the expected using the ! of jasmine.Matchers.toEqual",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": ""
-                }
-            ],
-            "deprecated": true,
-            "deprecationMessage": "as of 1.0. Use not.toNotEqual() instead.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1244,
-            "description": "Matcher that compares the actual to the expected using a regular expression.  Constructs a RegExp, so takes\na pattern or a String.",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": ""
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1254,
-            "description": "Matcher that compares the actual to the expected using the boolean inverse of jasmine.Matchers.toMatch",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": ""
-                }
-            ],
-            "deprecated": true,
-            "deprecationMessage": "as of 1.0. Use not.toMatch() instead.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1263,
-            "description": "Matcher that compares the actual to jasmine.undefined.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1270,
-            "description": "Matcher that compares the actual to jasmine.undefined.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1277,
-            "description": "Matcher that compares the actual to null.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1284,
-            "description": "Matcher that boolean not-nots the actual.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1292,
-            "description": "Matcher that boolean nots the actual.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1300,
-            "description": "Matcher that checks to see if the actual, a Jasmine spy, was called.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1322,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1325,
-            "description": "Matcher that checks to see if the actual, a Jasmine spy, was not called.",
-            "deprecated": true,
-            "deprecationMessage": "Use expect(xxx).not.toHaveBeenCalled() instead",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1349,
-            "description": "Matcher that checks to see if the actual, a Jasmine spy, was called with a set of parameters.",
-            "example": [
-                "\n"
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1378,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1381,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1398,
-            "description": "Matcher that checks that the expected item is an element in the actual Array.",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1407,
-            "description": "Matcher that checks that the expected item is NOT an element in the actual Array.",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "deprecated": true,
-            "deprecationMessage": "as of 1.0. Use not.toNotContain() instead.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1425,
-            "description": "Matcher that checks that the expected item is equal to the actual item\nup to a given level of decimal precision (default 2).",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": "",
-                    "type": "Number"
-                },
-                {
-                    "name": "precision",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1442,
-            "description": "Matcher that checks that the expected exception was thrown by the actual.",
-            "params": [
-                {
-                    "name": "expected",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1532,
-            "is_constructor": 1,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1567,
-            "description": "Holds results for a set of Jasmine spec. Allows for the results array to hold another jasmine.NestedResults",
-            "is_constructor": 1,
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1573,
-            "description": "The total count of results",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1577,
-            "description": "Number of passed results",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1581,
-            "description": "Number of failed results",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1585,
-            "description": "Was this suite/spec skipped?",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1589,
-            "ignore": "",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1595,
-            "description": "Roll up the result counts.",
-            "params": [
-                {
-                    "name": "result",
-                    "description": ""
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1606,
-            "description": "Adds a log message.",
-            "params": [
-                {
-                    "name": "values",
-                    "description": "Array of message parts which will be concatenated later."
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1614,
-            "description": "Getter for the results: message & results.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1621,
-            "description": "Adds a result, tracking counts (total, passed, & failed)",
-            "params": [
-                {
-                    "name": "result",
-                    "description": "",
-                    "type": "jasmine.ExpectationResult|jasmine.NestedResults"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1641,
-            "return": {
-                "description": "True if <b>everything</b> below passed",
-                "type": "Boolean"
-            },
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1647,
-            "description": "Base class for pretty printing for expectation results.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1654,
-            "description": "Formats a value in a nice, human-readable string.",
-            "params": [
-                {
-                    "name": "value",
-                    "description": ""
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1869,
-            "description": "Runner",
-            "is_constructor": 1,
-            "params": [
-                {
-                    "name": "env",
-                    "description": "",
-                    "type": "jasmine.Env"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1946,
-            "description": "Internal representation of a Jasmine specification, or test.",
-            "is_constructor": 1,
-            "params": [
-                {
-                    "name": "env",
-                    "description": "",
-                    "type": "jasmine.Env"
-                },
-                {
-                    "name": "suite",
-                    "description": "",
-                    "type": "jasmine.Suite"
-                },
-                {
-                    "name": "description",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 1985,
-            "description": "All parameters are pretty-printed and concatenated together, then written to the spec's output.\n\nBe careful not to leave calls to <code>jasmine.log</code> in production code.",
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 2008,
-            "params": [
-                {
-                    "name": "result",
-                    "description": "",
-                    "type": "jasmine.ExpectationResult"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 2021,
-            "description": "Waits a fixed time period before moving to the next block.",
-            "deprecated": true,
-            "deprecationMessage": "Use waitsFor() instead",
-            "params": [
-                {
-                    "name": "timeout",
-                    "description": "milliseconds to wait",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 2033,
-            "description": "Waits for the latchFunction to return true before proceeding to the next block.",
-            "params": [
-                {
-                    "name": "latchFunction",
-                    "description": "",
-                    "type": "Function"
-                },
-                {
-                    "name": "optional_timeoutMessage",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "optional_timeout",
-                    "description": "",
-                    "type": "Number"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 2189,
-            "description": "Internal representation of a Jasmine suite.",
-            "is_constructor": 1,
-            "params": [
-                {
-                    "name": "env",
-                    "description": "",
-                    "type": "jasmine.Env"
-                },
-                {
-                    "name": "description",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "specDefinitions",
-                    "description": "",
-                    "type": "Function"
-                },
-                {
-                    "name": "parentSuite",
-                    "description": "",
-                    "type": "jasmine.Suite"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 2286,
-            "description": "A block which waits for some condition to become true, with timeout.",
-            "is_constructor": 1,
-            "extends": "jasmine.Block",
-            "params": [
-                {
-                    "name": "env",
-                    "description": "The Jasmine environment.",
-                    "type": "jasmine.Env"
-                },
-                {
-                    "name": "timeout",
-                    "description": "The maximum time in milliseconds to wait for the condition to become true.",
-                    "type": "Number"
-                },
-                {
-                    "name": "latchFunction",
-                    "description": "A function which returns true when the desired condition has been met.",
-                    "type": "Function"
-                },
-                {
-                    "name": "message",
-                    "description": "The message to display if the desired condition hasn't been met within the given time period.",
-                    "type": "String"
-                },
-                {
-                    "name": "spec",
-                    "description": "The Jasmine spec.",
-                    "type": "jasmine.Spec"
-                }
-            ],
-            "class": "",
-            "module": "Bromine.utils"
-        },
-        {
-            "file": "/Users/arieh/www/Bromine/tests/lib/jasmine.js",
-            "line": 2427,
-            "class": "",
             "module": "Bromine.utils"
         }
     ]
