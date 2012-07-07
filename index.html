@@ -42,10 +42,16 @@
         <h1>Bromine</h1>
 
 <p>Bromine is a tool for running UI tests in the browser. It provides a simple-to-use flow control mechanism, as well as utilities for executing DOM events.</p>
-
 <p><em>Bromine was designed to be event based by nature, and relies heavily on <a href="https://github.com/arieh/Events">Events.js</a>, its syntax and its methods for passing event arguments</em></p>
 
-<p>You can also take a look <a href='docs/index.html'>at the docs</a> for more details on the API.</p> 
+<p>Take a look at the <a href='demo/index.html'>demo</a>. You can also take a look <a href='docs/index.html'>at the docs</a> for more details on the API.</p> 
+
+<h2>Why did we create Bromine</h2>
+<p>While working on automated tests for our <a href='http://www.chegg.com/etextbooks/'>eReader</a>, we were finding it harder and harder 
+to write tests for complex scenarios. We tried Selenium, but we found that in order to use it,
+we had to write a lot of JS code in it's tests, to be able to properly monitor the more complex state changes in our app.</p>
+<p>JS developers as we are, we decided to see if we could write a fully usable tool that will let us define our scenarios in readable, scalable, and easy to maintain JS code.</p>
+<p>Today, all our automated tests are running using Bromine. We were surprised by the power it gave us, and the level of details we were able to test, and so we decided to open source it, so we could share it with the world.</p>
 <h2>Usage</h2>
 
 <p>First - code example:</p>
@@ -210,7 +216,7 @@ x, y, details, button, ctrl, alt, shift, meta, relatedTarget   </p>
 <p>Parameters can be:
 ctrl, alt, shift, meta, key, charCode</p>
 
-<p><em>Note - these methods are not tested on IE, so I cannot gaurentee they will work on IE &lt; 9 (IE9+ will work fine)</em></p>
+<p><em>Note - these methods are not tested on IE, so we cannot gaurentee they will work on IE &lt; 9 (IE9+ will work fine)</em></p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/CheggEng">CheggEng</a></p>
