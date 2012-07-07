@@ -34,12 +34,14 @@ reporter.testStart = function(name,test){
     console.log('Test '+name+ ' Started');
 };
 
-reporter.testDone = function(name,test,results){
+reporter.testDone = function(name,results){
     console.log('Test '+name+' Ended');
     for (var i=0, res;res = results[i]; i++){
-        console.log(res.meg,res.success);    
+        console.log(res.msg,res.success);    
     }
 };
+
+reporter.done = function(){};
 
 Tester.registerReporter(reporter);
 
@@ -83,6 +85,70 @@ Tester.registerTest("Accordion Test",{
         }
     ]
 });
+
+(function(){
+    var list = document.getElementById('sort'),
+        list_pos = Bromine.utils.calculateOffsets(),
+        end = list_pos.left+list.offsetWidth;
+
+    if ('requestAnimationFrame' in window == false){ 
+        window.requestAnimationFrame = 
+            window.webkitRequestAnimationFrame ||
+               window.mozRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                 window.oRequestAnimationFrame ||
+
+                 function(callback, element) {
+                     // 17 is 1000ms / 60Hz
+                     return window.setTimeout(callback, 17);
+                 };
+          
+    }  
+
+    function moveToEnd(el, cb){
+        var pos = Bromine.utils.calculateOffsets(el), current = pos.left; 
+
+        function move(){
+            if (current > pos.left+end){
+                Bromine.fireMouseEvent(el,'mouseup',{x:current, y:pos.top+10});    
+                setTimeout(cb,100);
+            }else{
+                current+=5;
+                Bromine.fireMouseEvent(el,'mousemove',{x:current, y:pos.top+10});
+                requestAnimationFrame(move);
+            }
+        }
+
+        Bromine.fireMouseEvent(el,'mousedown',{x:pos.left+2, y:pos.top+10});
+        move();
+    }    
+
+    Tester.registerTest('Sortables Test', {
+        description : "Test the sortable list",
+        init : function(){
+            this.items = document.querySelectorAll('#sort li');    
+            this.index = 0;
+        },
+        destroy : function(){
+            this.items = null;    
+        },
+        tests : [
+            function(){
+                moveToEnd(this.items[this.index++], this.next);
+            },
+            function(){
+                this.log({
+                    msg : "Item "+this.index+" should have moved to the end",
+                    success : list.lastChild == this.items[this.index-1]
+                });    
+
+                if (this.index == 4) return this.done();
+
+                this.prev();
+            }
+        ]
+    });
+})();
 
 
 document.getElementById('start').addEventListener('click',function(){Tester.run();},false);

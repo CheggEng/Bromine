@@ -9,7 +9,7 @@
             margin: 20px auto;
             border:1px solid #fff;
             border-radius:20px;
-            background:#fff;
+            background:#DFEEFE;
             padding:30px;
         }
 
@@ -37,6 +37,7 @@
         }
 
         #sort{
+            position:relative;
             width:510px;
             height:50px;
             border:1px solid black;
@@ -45,6 +46,7 @@
         }
 
         #sort li{
+            position:relative;
             display:inline-block;
             width:90px;
             padding:5px;
@@ -67,10 +69,16 @@
 </head>
 <body>
     <section id='wrap'>
+    <header>
     <h1>Bromine Demo</h1>
+    <p>This demo demonstrates some of the capabilities of Bromine as a UI tester. To start the test, click the <em>start</em> button. Results will be logged to the console.</p>
+    </header>
     <a id='start' href='javascript:;'>Start</a>
     <section>
     <article id='acord'>
+    <header>
+    <p>This is a simple accordion. Clicking on a header will toggle it's content</p>
+    </header>
         <h2 id=sec1 class='current'>Section 1</h2>
         <p>There is nothing like a Sunday afternoon and a really good used bookstore.  Today my friend and I wandered into a new one on our way home from lunch.  Lorem Ipsum, located in Inman Square, Cambridge, is a quiet unassuming little store.  I was deceived at first by the simple arrangements and seemingly few bookshelves.  I noticed one tiny spot labeled, "Good books for kids" and figured it was the only kids book section.  In this section of 20ish books they did have two books on the list in my brain of "Good Books to Buy."</p>
         
@@ -82,6 +90,9 @@
     </article>
     </section>
     <section>
+    <header>
+    <p>This is a sortable list. The items will only move by dragging.</p>
+    </header>
     <ol id='sort'><li>Sec 1</li><li>Sec 2</li><li>Sec 3</li><li>Sec 4</li><li>Sec 5</li></ol> 
     </section>
     </section>
