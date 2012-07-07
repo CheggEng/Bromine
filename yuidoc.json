@@ -1,8 +1,9 @@
 {
     "name": "Chegg eReader",
+    "url" : "http://cheggeng.github.com/Bromine/",
     "options": {
         "linkNatives": "true",
         "outdir": "docs",
-        "paths": "."
+        "paths": ["lib","src"]
     }
 }

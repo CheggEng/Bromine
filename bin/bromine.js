@@ -585,7 +585,7 @@
      *  @param {function} [options.init]   a function to execute before tests start 
      *  @param {array}    [options.tests]  a queue of functions to run 
      *  @param {string}   [options.depend] a test dependancy
-     *  @param {int}      [options.fail_timeout=10 seconds] how much time to wait for tests to finish before reporting failure
+     *  @param {int}      [options.fail_timeout=10s] how much time to wait for tests to finish before reporting failure
      */
     function Test(opts){
         utils.Options.call(this);
@@ -621,13 +621,13 @@
      * fires if and when the test has finished running successfuly
      * @event done
      * @param {object} args
-     *  @param {array} results the results of the test
+     *  @param {array} args.results the results of the test
      */ 
     /**
      * fires if and when the test has finished running but failed
      * @event fail
      * @param {object} args
-     *  @param {array} results the results of the test
+     *  @param {array} args.results the results of the test
      */  
     /**
      * fires on object destruction

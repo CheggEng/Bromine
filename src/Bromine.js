@@ -64,13 +64,13 @@
      * fires if and when the test has finished running successfuly
      * @event done
      * @param {object} args
-     *  @param {array} results the results of the test
+     *  @param {array} args.results the results of the test
      */ 
     /**
      * fires if and when the test has finished running but failed
      * @event fail
      * @param {object} args
-     *  @param {array} results the results of the test
+     *  @param {array} args.results the results of the test
      */  
     /**
      * fires on object destruction
