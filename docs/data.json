@@ -1,6 +1,7 @@
 {
     "project": {
-        "name": "Chegg eReader"
+        "name": "Chegg eReader",
+        "url": "http://cheggeng.github.com/Bromine/"
     },
     "files": {
         "lib/Events/Events.js": {
@@ -519,12 +520,14 @@
                 {
                     "name": "args",
                     "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "results",
-                    "description": "the results of the test",
-                    "type": "Array"
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "results",
+                            "description": "the results of the test",
+                            "type": "Array"
+                        }
+                    ]
                 }
             ],
             "class": "Bromine.Test",
@@ -540,12 +543,14 @@
                 {
                     "name": "args",
                     "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "results",
-                    "description": "the results of the test",
-                    "type": "Array"
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "results",
+                            "description": "the results of the test",
+                            "type": "Array"
+                        }
+                    ]
                 }
             ],
             "class": "Bromine.Test",
