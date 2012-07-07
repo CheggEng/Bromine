@@ -1,0 +1,3 @@
+[submodule "lib/Events"]
+	path = lib/Events
+	url = git://github.com/arieh/Events.git

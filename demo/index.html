@@ -12,107 +12,83 @@
             background:#fff;
             padding:30px;
         }
-
-        html{
-            background:#aae;
-        }
-        a{
-            display:block;
-        }
-        h1{
-            text-align:center;
-        }
-        .clicked {
-            color : #fed
+        h2 {
+            width:200px;
+            height:20px;
+            line-height:20px;
+            vertical-align:middle;
+            background:#396DAD;
+            color:#fff;
+            font-weight:bold;
+            cursor:pointer;
+            padding:2px 5px;    
         }
 
-        table{
-            width:500px;
-            margin:0 auto;
+        #sort{
+            width:510px;
+            height:50px;
+            border:1px solid black;
+            margin:10px;
         }
 
-        td{
-            text-align:center;
+        #sort li{
+            display:inline-block;
+            width:90px;
+            padding:5px;
+            height:40px;
+            line-height:40px;
+            vertical-align:middle;
+            text-align:middle;
+            cursor:pointer;
+            border:1px solid;    
         }
 
-        .X {
-            background-color:#F00;
-        }
-
-        .V {
-            background-color:#0F0;
+        #sort .current{
+            background:#fed;        
         }
     </style>
 </head>
 <body>
     <h1>Bromine Demo</h1>
-	<a href="#bla1">bla1</a><a href="#bla2">bla2</a><a href="#bla3">bla3</a>
-    <table>
-        <thead>
-            <tr><th>Test</th><th>Result</th>
-        </thead>
-        <tbody id='results'>
-        </tbody>
-    </table>
-    <script src="../src/Events.js" type="text/javascript"></script>
-    <script src="../src/utils.js" type="text/javascript"></script>
-    <script src="../src/Bromine.js" type="text/javascript"></script>
-    <script src="../src/Reporter.js" type="text/javascript"></script>
+    <article id='acord'>
+        <h2 id=sec1 class='current'>Section 1</h2>
+        <p>There is nothing like a Sunday afternoon and a really good used bookstore.  Today my friend and I wandered into a new one on our way home from lunch.  Lorem Ipsum, located in Inman Square, Cambridge, is a quiet unassuming little store.  I was deceived at first by the simple arrangements and seemingly few bookshelves.  I noticed one tiny spot labeled, "Good books for kids" and figured it was the only kids book section.  In this section of 20ish books they did have two books on the list in my brain of "Good Books to Buy."</p>
+        
+        <h2 id=sec2>Section 2</h2>
+        <p>"This store is pretty cool, but their children's section is seriously lacking," I mumbled to my friend.  Oh me.  Turn the corner and there was the kids book section I was looking for, which was NOT seriously lacking!  Although it was restricted to two and a half book shelves, these shelves were packed with the best of the best.  Soon I had a stack of books I had to have.  Then I added some numbers in my head and quietly re-shelved a few of the books.
+    </p>
+        <h2 id=sec3>Section 3</h2>
+        <p>My favorite section was the quirky children's books.  (It had a really cool name but I can't remember right now...)  Here I found old copies of books, strange children's books never heard of, and titles that made me laugh out loud, such as: Peep Show: A little book of Rhymes. Ha!</p>
+    </article>
+
+<ol id='sort'><li>Sec 1</li><li>Sec 2</li><li>Sec 3</li><li>Sec 4</li><li>Sec 5</li></ol> 
+<script src="../bin/bromine.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var tester = new Bromine.Tester(),
-            reporter = new Bromine.Reporter,
-            table  = document.getElementById('results');
+    (function() {
+        var acord = new Fx.Accordion($('acord'), '#acord h2', '#acord p'),
+            current = $$('.current');
 
-        tester.registerReporter(reporter);
+        acord.addEvent('active', function(t, e) {
+            current.removeClass('current');
+            current = t;
+            t.addClass('current');
+        });
+    })();
 
-        reporter.testDone = reporter.testFail = function(name, results){
-            var i, res, tr
-                template = "<td>{text}</td><td class={state}></td>";
-
-            for (i=0;res = results[i]; i++){
-                tr = document.createElement('tr');
-                tr.innerHTML = template.replace('{text}', res.msg).replace('{state}',res.success ? 'V' : 'X');
-                table.appendChild(tr);
+    (function(){
+        var sort = new Sortables($('sort'),{
+            clone:false,
+            constrain: true,
+            opacity:0.8,
+            onStart: function(el){
+    el.addClass('current');                
+            },
+            onComplete : function(el){
+                el.removeClass('current');   
             }
-        }
-
-        document.addEventListener('click', function(e){
-            e.target.className = 'clicked';       
         });
-
-        document.addEventListener('DOMContentLoaded',function(){ 
-            tester.registerTest("Href Test",{
-                discription : "Test that all anchors change url properly",
-                init : function(){
-                    this.element = document.querySelector('a');
-                    this.index = 1;
-                },
-                destroy : function(){
-                    this.element = null;
-                },
-                tests : [
-                    function(){
-                        Bromine.fireEvent(this.element, 'click');
-                        this.log({
-                            msg : "Anchor #"+ this.index +" should have a clicked class",
-                            success : this.element.classList.contains('clicked')
-                        });
-
-                        this.index++;
-
-                        this.element = this.element.nextSibling;
-
-                        if (this.element.nodeName.toLowerCase()!='a'){
-                            this.done();
-                        }else{
-                            this.current();
-                        }
-                    }
-                ]
-            }); 
-
-            tester.run();
-        });
+    })();  
     </script>
 </body>
 </html>
