@@ -25,10 +25,11 @@
      * @constructor
      *
      * @param {object} options
-     *  @param {function} [options.init]   a function to execute before tests start 
+     *  @param {function} [options.init]   a function to execute before test start 
+     *  @param {function} [options.destroy] a function to execute after the test ends (should be used for cleanup)
      *  @param {array}    [options.tests]  a queue of functions to run 
      *  @param {string}   [options.depend] a test dependancy
-     *  @param {int}      [options.fail_timeout=10s] how much time to wait for tests to finish before reporting failure
+     *  @param {integer}  [options.fail_timeout=10s] how much time to wait for tests to finish before reporting failure
      */
     function Test(opts){
         utils.Options.call(this);
