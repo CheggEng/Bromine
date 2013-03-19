@@ -14,12 +14,12 @@
  */
 (function (root, factory) {
     if (typeof exports === 'object') {
-        var Events = require('Events/Events').Events;
+        var Events = require('Bromine/Events').Events;
 
         module.exports = factory(Events);
 
     } else if (typeof define === 'function' && define.amd) {
-        define(['Events/Events'], function (Events) {
+        define(['Bromine/Events'], function (Events) {
             return factory(Events.Events);
         });
     } else {

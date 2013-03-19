@@ -14,18 +14,18 @@
  */
 (function (root, factory) {
     if (typeof exports === 'object') {
-        var utils = require('tester/Bromine/src/utils');
+        var utils = require('Bromine/utils');
 
         module.exports = factory(Events);
 
     } else if (typeof define === 'function' && define.amd) {
-        define(['tester/Bromine/src/utils'], function (utils) {
+        define(['Bromine/utils'], function (utils) {
             return factory(utils);
         });
     } else {
         root.Bromine = factory(root.utils);
     }
-}(this, function (Events) {
+}(this, function (utils) {
     /**
      * @module Bromine
      */

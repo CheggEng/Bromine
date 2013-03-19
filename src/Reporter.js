@@ -14,12 +14,12 @@
  */
 (function (root, factory) {
     if (typeof exports === 'object') {
-        var Bromine = require('tester/Bromine/src/Bromine');
+        var Bromine = require('Bromine/Bromine');
 
         module.exports = factory(Bromine);
 
     } else if (typeof define === 'function' && define.amd) {
-        define(['tester/Bromine/src/Bromine'], function (Bromine) {
+        define(['Bromine/Bromine'], function (Bromine) {
             return factory(Bromine);
         });
     } else {
