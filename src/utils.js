@@ -11,8 +11,21 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.   
- */   
-!function(){
+ */
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        var Events = require('Events/Events').Events;
+
+        module.exports = factory(Events);
+
+    } else if (typeof define === 'function' && define.amd) {
+        define(['Events/Events'], function (Events) {
+            return factory(Events.Events);
+        });
+    } else {
+        root.Bromine.utils = factory(root.Events);
+    }
+}(this, function (Events) {
     /**
      * @module Bromine.utils
      */
@@ -105,8 +118,6 @@
             top: offsetParentOffsetTop
         };
     };
-    
-    this.Bromine = {
-        utils: utils    
-    };
-}.call(this);
+
+    return utils;
+}));

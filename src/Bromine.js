@@ -12,7 +12,20 @@
    See the License for the specific language governing permissions and
    limitations under the License.   
  */
-!function(ns, utils){
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        var utils = require('tester/Bromine/src/utils');
+
+        module.exports = factory(Events);
+
+    } else if (typeof define === 'function' && define.amd) {
+        define(['tester/Bromine/src/utils'], function (utils) {
+            return factory(utils);
+        });
+    } else {
+        root.Bromine = factory(root.utils);
+    }
+}(this, function (Events) {
     /**
      * @module Bromine
      */
@@ -406,6 +419,8 @@
      * @class Bromine
      */
 
+    Bromine = window.Bromine || {};
+
     /**
      * Dispatches a DOM event on a given element
      * @method fireEvent
@@ -533,4 +548,6 @@
 
     Bromine.Tester = Tester;
     Bromine.Test = Test;
-}.apply(Bromine,[Bromine, Bromine.utils]);
+
+    return Bromine;
+}));

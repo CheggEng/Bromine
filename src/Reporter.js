@@ -12,7 +12,20 @@
    See the License for the specific language governing permissions and
    limitations under the License.   
  */
-!function(){
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        var Bromine = require('tester/Bromine/src/Bromine');
+
+        module.exports = factory(Bromine);
+
+    } else if (typeof define === 'function' && define.amd) {
+        define(['tester/Bromine/src/Bromine'], function (Bromine) {
+            return factory(Bromine);
+        });
+    } else {
+        root.Bromine.Reporter = factory(root.Bromine);
+    }
+}(this, function (Bromine) {
 
     function Reporter(){}
 
@@ -46,7 +59,7 @@
         }
     };
 
-    Bromine.Reporter = Reporter;
+    return Reporter;
     
-}.call(Bromine);
+}));
 
