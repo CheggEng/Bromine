@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src&#x2F;Bromine.js - Chegg eReader</title>
+    <title>src&#x2F;Bromine.js - Bromine Docs</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -15,7 +15,7 @@
     <div id="hd" class="yui3-g header">
         <div class="yui3-u-3-4">
             
-                <h1><img src="..&#x2F;assets/css/logo.png" title="Chegg eReader"></h1>
+                <h1><img src="..&#x2F;assets/css/logo.png" title="Bromine Docs"></h1>
             
         </div>
         <div class="yui3-u-1-4 version">
@@ -102,6 +102,20 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
+&#x2F;**!Copyright 2012 Chegg inc
+
+   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http:&#x2F;&#x2F;www.apache.org&#x2F;licenses&#x2F;LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.   
+ *&#x2F;
 !function(ns, utils){
     &#x2F;**
      * @module Bromine
@@ -115,10 +129,11 @@
      * @constructor
      *
      * @param {object} options
-     *  @param {function} [options.init]   a function to execute before tests start 
+     *  @param {function} [options.init]   a function to execute before test start 
+     *  @param {function} [options.destroy] a function to execute after the test ends (should be used for cleanup)
      *  @param {array}    [options.tests]  a queue of functions to run 
      *  @param {string}   [options.depend] a test dependancy
-     *  @param {int}      [options.fail_timeout=10 seconds] how much time to wait for tests to finish before reporting failure
+     *  @param {integer}  [options.fail_timeout=10s] how much time to wait for tests to finish before reporting failure
      *&#x2F;
     function Test(opts){
         utils.Options.call(this);
@@ -154,13 +169,13 @@
      * fires if and when the test has finished running successfuly
      * @event done
      * @param {object} args
-     *  @param {array} results the results of the test
+     *  @param {array} args.results the results of the test
      *&#x2F; 
     &#x2F;**
      * fires if and when the test has finished running but failed
      * @event fail
      * @param {object} args
-     *  @param {array} results the results of the test
+     *  @param {array} args.results the results of the test
      *&#x2F;  
     &#x2F;**
      * fires on object destruction

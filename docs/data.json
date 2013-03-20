@@ -1,8 +1,23 @@
 {
     "project": {
-        "name": "Chegg eReader"
+        "name": "Bromine Docs",
+        "url": "http://cheggeng.github.com/Bromine/"
     },
     "files": {
+        "bin/bromine.js": {
+            "name": "bin/bromine.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "bin/bromine.min.js": {
+            "name": "bin/bromine.min.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "lib/Events/Events.js": {
             "name": "lib/Events/Events.js",
             "modules": {
@@ -24,6 +39,13 @@
                 "Bromine.Tester": 1,
                 "Bromine": 1
             },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/license.js": {
+            "name": "src/license.js",
+            "modules": {},
+            "classes": {},
             "fors": {},
             "namespaces": {}
         },
@@ -67,6 +89,19 @@
             "file": "lib/Events/Events.js",
             "line": 124
         },
+        "Bromine.utils": {
+            "name": "Bromine.utils",
+            "submodules": {},
+            "classes": {
+                "Bind": 1,
+                "Options": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/utils.js",
+            "line": 43
+        },
         "Bromine": {
             "name": "Bromine",
             "submodules": {},
@@ -79,20 +114,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "src/Bromine.js",
-            "line": 391
-        },
-        "Bromine.utils": {
-            "name": "Bromine.utils",
-            "submodules": {},
-            "classes": {
-                "Bind": 1,
-                "Options": 1
-            },
-            "fors": {},
-            "namespaces": {},
-            "tag": "module",
-            "file": "src/utils.js",
-            "line": 29
+            "line": 406
         }
     },
     "classes": {
@@ -121,6 +143,39 @@
                 }
             ]
         },
+        "Bind": {
+            "name": "Bind",
+            "shortname": "Bind",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "Bromine.Tester"
+            ],
+            "module": "Bromine.utils",
+            "namespace": "",
+            "file": "src/utils.js",
+            "line": 21,
+            "description": "this mixin automatically creates a `bound` collection of functions"
+        },
+        "Options": {
+            "name": "Options",
+            "shortname": "Options",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "Bromine.Test",
+                "Bromine.Tester"
+            ],
+            "module": "Bromine.utils",
+            "namespace": "",
+            "file": "src/utils.js",
+            "line": 43,
+            "description": "A simple mixin for providing and options argument.\nIf the object has a defaultOptions instance it will set them.\n\nmixing also provides the setOptions method.\nother than settting the options, any key with the on* signiture (onLoad, onComplete etc)\nwill be added as an event"
+        },
         "Bromine.Test": {
             "name": "Bromine.Test",
             "shortname": "Bromine.Test",
@@ -132,7 +187,7 @@
             "module": "Bromine",
             "namespace": "",
             "file": "src/Bromine.js",
-            "line": 6,
+            "line": 20,
             "description": "A Test Instance",
             "uses": [
                 "Events",
@@ -147,7 +202,13 @@
                     "props": [
                         {
                             "name": "init",
-                            "description": "a function to execute before tests start",
+                            "description": "a function to execute before test start",
+                            "type": "Function",
+                            "optional": true
+                        },
+                        {
+                            "name": "destroy",
+                            "description": "a function to execute after the test ends (should be used for cleanup)",
                             "type": "Function",
                             "optional": true
                         },
@@ -162,13 +223,15 @@
                             "description": "a test dependancy",
                             "type": "String",
                             "optional": true
+                        },
+                        {
+                            "name": "fail_timeout",
+                            "description": "how much time to wait for tests to finish before reporting failure",
+                            "type": "Integer",
+                            "optional": true,
+                            "optdefault": "10s"
                         }
                     ]
-                },
-                {
-                    "name": "[options.fail_timeout=10",
-                    "description": "seconds] how much time to wait for tests to finish before reporting failure",
-                    "type": "Int"
                 }
             ]
         },
@@ -183,7 +246,7 @@
             "module": "Bromine",
             "namespace": "",
             "file": "src/Bromine.js",
-            "line": 197,
+            "line": 212,
             "description": "Test Runner\nTakes care of registering tests, running them and reporting their results",
             "is_constructor": 1,
             "uses": [
@@ -225,43 +288,766 @@
             "module": "Bromine",
             "namespace": "",
             "file": "src/Bromine.js",
-            "line": 391
-        },
-        "Bind": {
-            "name": "Bind",
-            "shortname": "Bind",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [
-                "Bromine.Tester"
-            ],
-            "module": "Bromine.utils",
-            "namespace": "",
-            "file": "src/utils.js",
-            "line": 7,
-            "description": "this mixin automatically creates a `bound` collection of functions"
-        },
-        "Options": {
-            "name": "Options",
-            "shortname": "Options",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [
-                "Bromine.Test",
-                "Bromine.Tester"
-            ],
-            "module": "Bromine.utils",
-            "namespace": "",
-            "file": "src/utils.js",
-            "line": 29,
-            "description": "A simple mixin for providing and options argument.\nIf the object has a defaultOptions instance it will set them.\n\nmixing also provides the setOptions method.\nother than settting the options, any key with the on* signiture (onLoad, onComplete etc)\nwill be added as an event"
+            "line": 406
         }
     },
     "classitems": [
+        {
+            "file": "bin/bromine.js",
+            "line": 1,
+            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
+            "class": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 49,
+            "description": "removes the on* prefix from event names",
+            "itemtype": "method",
+            "name": "Events.removeOn",
+            "static": 1,
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 64,
+            "description": "returns a structured data object about a type's pseudo-events",
+            "itemtype": "method",
+            "name": "getPseudo",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "data",
+                "type": "Object"
+            },
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 87,
+            "description": "proccesses an event type, returning a valid data object from that name",
+            "itemtype": "method",
+            "name": "processType",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "data",
+                "type": "Object"
+            },
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 101,
+            "description": "cross-browser function to create event object for fire method\n\nCreated object will always have following properties:\n - dispatcher: a reference to dispatching object (since we can't use 'this')\n - args: arguments passed alongside the event\n - object_event: a flag set to true to easily check if this is an object event or a normal DOM event.",
+            "itemtype": "method",
+            "name": "Events.createEvent",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "dispatcher",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "args",
+                    "description": "",
+                    "type": "Mixed"
+                }
+            ],
+            "return": {
+                "description": "event object"
+            },
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 290,
+            "description": "Adds an event",
+            "itemtype": "method",
+            "name": "addEvent",
+            "params": [
+                {
+                    "name": "the",
+                    "description": "event type",
+                    "type": "String"
+                },
+                {
+                    "name": "a",
+                    "description": "function to add",
+                    "type": "Function"
+                }
+            ],
+            "chainable": 1,
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 320,
+            "description": "Helper to add multiple events at once",
+            "itemtype": "method",
+            "name": "addEvents",
+            "params": [
+                {
+                    "name": "literal",
+                    "description": "object of event types => callbacks",
+                    "type": "Object"
+                }
+            ],
+            "chainable": 1,
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 339,
+            "description": "dispatches an event",
+            "itemtype": "method",
+            "name": "fireEvent",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "type",
+                    "type": "String"
+                },
+                {
+                    "name": "arguments",
+                    "description": "to pass with the event",
+                    "type": "Mixed"
+                }
+            ],
+            "chainable": 1,
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 378,
+            "description": "removes a function from an event",
+            "itemtype": "method",
+            "name": "removeEvent",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "type",
+                    "type": "String"
+                },
+                {
+                    "name": "function",
+                    "description": "to remove from stack",
+                    "type": "Function"
+                }
+            ],
+            "chainable": 1,
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 401,
+            "description": "Adds an event for one execution, then removes it",
+            "itemtype": "method",
+            "name": "addEventOnce",
+            "params": [
+                {
+                    "name": "the",
+                    "description": "event type",
+                    "type": "String"
+                },
+                {
+                    "name": "a",
+                    "description": "function to add",
+                    "type": "Function"
+                }
+            ],
+            "chainable": 1,
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 423,
+            "description": "Fires a latched event",
+            "itemtype": "method",
+            "name": "fireLatchedEvent",
+            "params": [
+                {
+                    "name": "the",
+                    "description": "event type",
+                    "type": "String"
+                },
+                {
+                    "name": "arguments",
+                    "description": "to pass with the event",
+                    "type": "Mixed"
+                }
+            ],
+            "chainable": 1,
+            "class": "Events",
+            "module": "Events"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 473,
+            "description": "collection of bound function",
+            "itemtype": "property",
+            "name": "bound",
+            "type": "{Object}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Bind",
+            "module": "Bromine.utils"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 506,
+            "itemtype": "method",
+            "name": "setOptions",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "chainable": 1,
+            "class": "Options",
+            "module": "Bromine.utils"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 525,
+            "description": "calculates the offsets of an element relevant to one of it's parent",
+            "itemtype": "method",
+            "name": "calculateOffsets",
+            "static": 1,
+            "params": [
+                {
+                    "name": "element",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "container",
+                    "description": "default to `document.body`",
+                    "type": "Element",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "{left, top}",
+                "type": "Object"
+            },
+            "class": "Options",
+            "module": "Bromine.utils"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 558,
+            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
+            "class": "Options",
+            "module": "Bromine.utils"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 600,
+            "description": "holds a stack of reported results",
+            "itemtype": "property",
+            "name": "results",
+            "type": "{Array}",
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 617,
+            "description": "fires when test starts running. Latched",
+            "itemtype": "event",
+            "name": "start",
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 621,
+            "description": "fires if and when the test has finished running successfuly",
+            "itemtype": "event",
+            "name": "done",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "results",
+                            "description": "the results of the test",
+                            "type": "Array"
+                        }
+                    ]
+                }
+            ],
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 627,
+            "description": "fires if and when the test has finished running but failed",
+            "itemtype": "event",
+            "name": "fail",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "results",
+                            "description": "the results of the test",
+                            "type": "Array"
+                        }
+                    ]
+                }
+            ],
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 633,
+            "description": "fires on object destruction",
+            "itemtype": "event",
+            "name": "destory",
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 648,
+            "description": "runs the tests",
+            "itemtype": "method",
+            "name": "run",
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 658,
+            "description": "logs a result to the test",
+            "itemtype": "method",
+            "name": "log",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 667,
+            "description": "Called when tests are done",
+            "itemtype": "method",
+            "name": "done",
+            "params": [
+                {
+                    "name": "state",
+                    "description": "whether test passed or failed",
+                    "type": "Bool"
+                },
+                {
+                    "name": "message",
+                    "description": "only used on failure",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 688,
+            "description": "signifies a test failure. Will stop any more steps from running",
+            "itemtype": "method",
+            "name": "",
+            "type": "Fail",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 726,
+            "description": "calls the next function in the stack",
+            "itemtype": "method",
+            "name": "next",
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 740,
+            "description": "calls the current function in the stack",
+            "itemtype": "method",
+            "name": "current",
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 751,
+            "description": "calls the previous function in the stack",
+            "itemtype": "method",
+            "name": "prev",
+            "class": "Bromine.Test",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 794,
+            "description": "fires when a test starts running",
+            "itemtype": "event",
+            "name": "start",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "test",
+                            "description": "",
+                            "type": "Bromine.Test"
+                        }
+                    ]
+                }
+            ],
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 801,
+            "description": "fires when all tests are done",
+            "itemtype": "event",
+            "name": "done",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "props": [
+                        {
+                            "name": "results",
+                            "description": "",
+                            "type": "Array"
+                        }
+                    ]
+                }
+            ],
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 807,
+            "description": "fires when a test is done successfuly",
+            "itemtype": "event",
+            "name": "testDone",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "test",
+                            "description": "",
+                            "type": "Bromine.Test"
+                        },
+                        {
+                            "name": "results",
+                            "description": "",
+                            "type": "Array"
+                        }
+                    ]
+                }
+            ],
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 815,
+            "description": "fires when a test is done but failed",
+            "itemtype": "event",
+            "name": "testFAil",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "test",
+                            "description": "",
+                            "type": "Bromine.Test"
+                        },
+                        {
+                            "name": "results",
+                            "description": "",
+                            "type": "Array"
+                        }
+                    ]
+                }
+            ],
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 830,
+            "description": "register a test",
+            "itemtype": "method",
+            "name": "registerTest",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "paramaters",
+                    "description": "for Test constructor or a Test instance",
+                    "type": "Object|Bromine.Test"
+                }
+            ],
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 861,
+            "description": "returns the tests stack",
+            "itemtype": "method",
+            "name": "getTests",
+            "return": {
+                "description": "tests",
+                "type": "Array"
+            },
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 870,
+            "description": "starts running tests",
+            "itemtype": "method",
+            "name": "run",
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 880,
+            "description": "resets test runner",
+            "itemtype": "method",
+            "name": "reset",
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 940,
+            "description": "registers a Test reporter",
+            "itemtype": "method",
+            "name": "registerReporter",
+            "params": [
+                {
+                    "name": "Bromine.Reporter",
+                    "description": ""
+                }
+            ],
+            "class": "Bromine.Tester",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 967,
+            "description": "Dispatches a DOM event on a given element",
+            "itemtype": "method",
+            "name": "fireEvent",
+            "static": 1,
+            "params": [
+                {
+                    "name": "el",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Bromine",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 990,
+            "description": "Fires a mouse event on element\n\nAdditional parameters can be:\n \n x, y, details, button, ctrl, alt, shift, meta, relatedTarget\n\n if no x/y supplied, will use element position",
+            "itemtype": "method",
+            "name": "fireMouseEvent",
+            "static": 1,
+            "params": [
+                {
+                    "name": "el",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Bromine",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 1039,
+            "description": "Fires a keyboard event on element\n\nAdditional parameters can be:\n \n ctrl, alt, shift, meta, key, charCode",
+            "itemtype": "method",
+            "name": "fireKeyboardEvent",
+            "static": 1,
+            "params": [
+                {
+                    "name": "el",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Bromine",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.js",
+            "line": 1075,
+            "description": "Dispatches a DOM event on an element, then dispatches a callback after given delay",
+            "itemtype": "method",
+            "name": "fireEventWithDelay",
+            "static": 1,
+            "params": [
+                {
+                    "name": "el",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "delay",
+                    "description": "",
+                    "type": "Int",
+                    "optional": true,
+                    "optdefault": "500"
+                }
+            ],
+            "class": "Bromine",
+            "module": "Bromine"
+        },
+        {
+            "file": "bin/bromine.min.js",
+            "line": 1,
+            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.   \n */!function(){function f(e,t){var n,r;if(e.indexOf)return e.indexOf(t);for(n=0;r=e[n];n++)if(r==t)return n;return-1}function l(e){if(u.strict)throw new Error(e);\"console\"in window&&(console.error?console.error(e):console.warn?console.warn(e):console.log(e))}function c(e){return e.replace(/^on([A-Z])/,function(e,t){return t.toLowerCase()})}function h(e){var n=e.match(t);return e.split(\":\").length>2&&l(\"Library does not support multiple pseudo events\"),{name:n[1],pseudo:n[2],args:n[3]}}function p(e){return h(c(e))}function d(t,n,r){var i;return e?(i=document.createEvent(\"UIEvents\"),i.initUIEvent(t,!1,!1,window,1)):i={},i.dispatcher=n,i.args=r,i.object_event=!0,i}function v(t,n,r){e?t.$event_element.addEventListener(n,r,!1):t.$events[n]?t.$events[n].indexOf(r)==-1&&t.$evetns[n].push(r):t.$events[n]=[r]}function m(t,n,r){var i,s;if(e)t.$event_element.dispatchEvent(r);else for(i=0;s=t.$events[n];i++)s.apply(null,[r])}function g(t,n,r){var i;if(e)t.$event_element.removeEventListener(n,r,!1);else{if(!t.$events[n])return;i=f(t.$events[n],r);if(i<0)return;t.$events[n].splice(i,1)}}var e=\"createEvent\"in document,t=/([^:]+)(?:\\:([^(]*)(?:\\((.*)\\))?)?/,n,r,i,s,o,u,a;u=function(u){var f=this;e?this.$event_element=u||document.createElement(\"events\"):this.$events={},this.$latched={},this.$once={},this.addEvent=n,this.addEvents=r,this.fireEvent=i,this.removeEvent=s,this.addEventOnce=o,this.fireLatchedEvent=a,this.addEvent(\"destroy:delay(0)\",function(){var e=\"$event_element $latched $events $once addEvent removeEvent addEventOnce fireLatchedEvent\".split(\" \"),t,n;for(t=0;n=e[t];t++)f[n]=null})},u.removeOn=c,u.getPseudos=h,u.processType=p,u.createEvent=d,u.strict=!1,u.Pseudoes={once:{addEvent:function(e,t){return this.addEventOnce(e,t)}},latched:{fireEvent:function(e,t){return this.fireLatchedEvent(e,t)}},times:{addEvent:function(e,t,n){var r=0,i=this;this.addEvent(e,function s(){t.apply(null,arguments),r+=1,r==n&&i.removeEvent(e,s)})}},delay:{addEvent:function(e,t,n){this.addEvent(e,function(){setTimeout(t,n)})},fireEvent:function(e,t,n){var r=this;setTimeout(function(){r.fireEvent(e,t)},n)}}},n=function(t,n){var r=p(t),i=u.Pseudoes[r.pseudo]&&u.Pseudoes[r.pseudo].addEvent,s=this.$latched[r.name]&&this.$latched[r.name].args,o;return i?i.apply(this,[r.name,n,r.args]):(v(this,r.name,n),this.$latched&&this.$latched[r.name]&&(o=d(r.name,this,s),n.apply(null,[o])),this)},r=function(t){var n;for(n in t)t.hasOwnProperty(n)&&this.addEvent(n,t[n]);return this},i=function(t,n){var r=p(t),i=u.Pseudoes[r.pseudo]&&u.Pseudoes[r.pseudo].fireEvent,s,o,a,f;if(i)return i.call(this,r.name,n);a=this.$once[r.name],this.$once[r.name]=null,s=d(r.name,this,n),m(this,r.name,s);if(!a)return this;while(o=a.pop())this.removeEvent(r.name,o,!0);return this},s=function(t,n,r){var i=p(t),s;return g(this,i.name,n),!r&&this.$once[i.name]&&(s=this.$once[i.name].indexOf(n))>-1&&this.$once[i.name].splice(s,1),this},o=function(t,n){var r=this,i=p(t);return this.$once[i.name]||(this.$once[i.name]=[]),this.$once[i.name].indexOf(n)==-1&&this.$once[i.name].push(n),this.addEvent(i.name,n)},a=function(t,n){return this.$latched||(this.$latched={}),this.$latched[t]={args:n},this.fireEvent(t,n),this},this.Events=u}.call(this),!function(){var e={};e.Bind=function(){var e,t;this.bound={};if(!this.bind)return;for(e=0;t=this.bind[e];e++)this[t]&&(this.bound[t]=this[t].bind(this))},e.Options=function(){var n;this.options||(this.options={});for(n in this.defaultOptions)this.defaultOptions.hasOwnProperty(n)&&(this.options[n]=this.defaultOptions[n]);this.setOptions=function(t){var n;if(typeof t!=\"object\"||t===null)return;for(n in t)t.hasOwnProperty(n)&&(n in this.options&&(this.options[n]=t[n]),/^on[A-Z][a-zA-Z]+/.test(n)&&this.addEvent&&typeof t[n]==\"function\"&&this.addEvent(e.Events.removeOn(n),t[n]));return this}},e.Events=Events,e.calculateOffsets=function(e,t){var n=e,r=0,i=0;t||(t=document.body);while(n&&n!=t)r+=n.offsetLeft,i+=n.offsetTop,n=n.offsetParent;return{left:r,top:i}},this.Bromine={utils:e}}.call(this),!function(e,t){function r(e){t.Options.call(this),t.Events.call(this),this.setOptions(e),this.stack=this.options.tests,this.description=this.options.description,this.results=[],this.next=this.next.bind(this),this.current=this.current.bind(this),this.prev=this.prev.bind(this),this.test_index=0,this.depend=e.depend,e.init&&e.init.call(this)}function i(e){t.Bind.call(this),t.Options.call(this),t.Events.call(this),this.setOptions(e),this.tests={},this.depends=[],this.stack=[],this.results={}}function s(){var e=document.createEventObject();return e}var n=\"addEventListener\"in document;r.prototype={constructor:r,defaultOptions:{init:function(){},destroy:function(){},tests:[],depend:\"\",fail_timeout:1e4},run:function(){this.fireEvent(\"start:latched\"),this.next()},log:function(e){this.results.push(e)},done:function(e,t){this.tests_done=!0,clearTimeout(this.timeout_handle);if(e===!1)return this.fail(t);this.fireEvent(\"done:latched\",{results:this.results}),this.destroy()},fail:function(e){this.tests_done=!0,clearTimeout(this.timeout_handle),this.log({success:!1,msg:e}),this.fireEvent(\"fail\",{results:this.results}),this.destroy()},destroy:function(){this.fireEvent(\"destroy\"),this.options.destroy()},setTimeout:function(){var e=this;this.options.fail_timeout&&(clearTimeout(this.timeout_handle),this.timeout_handle=setTimeout(function(){e.fail(\"Test timed out\")},this.options.fail_timeout))},next:function(){var e=this.stack[this.test_index++];return this.tests_done?null:(this.setTimeout(),e&&e.apply(this,arguments))},current:function(){var e=this.test_index===0?this.stack[this.test_index]:this.stack[this.test_index-1];return this.tests_done?null:(this.setTimeout(),e&&e.apply(this,arguments))},prev:function(){var e;return this.tests_done?null:(this.test_index-=1,this.test_index<1&&(this.test_index=1),e=this.stack[this.test_index-1],this.setTimeout(),e&&e.apply(this,arguments))}},i.prototype={constructor:i,defaultOptions:{exclude:[],run_only:[]},bind:[\"testDone\",\"testFailed\"],registerTest:function(e,t){var n=this.tests[e]=t instanceof r?t:new r(t),i=this;n.addEvents({start:function(e){i.fireEvent(\"testStart\",{name:e.dispatcher.name,test:e.dispatcher})},done:this.bound.testDone,fail:this.bound.testFailed}),n.name=e,this.depends[e]||(this.depends[e]=[]),t.depend?(this.depends[t.depend]||(this.depends[t.depend]=[]),this.depends[t.depend].push(e)):this.stack.push(e)},getTests:function(){return this.stack},run:function(){this.original_stack=JSON.stringify(this.stack),this.stop=!1,this.next()},reset:function(){this.stop=!0,this.stack=JSON.parse(this.original_stack)},next:function(){var e=this.stack.shift(),t=this.tests[e];if(this.stop)return;if(!e){this.fireEvent(\"done\",{results:this.results});return}if(this.options.exclude.indexOf(e)>-1)return this.next();if(this.options.run_only.length&&this.options.run_only.indexOf(e)==-1)return this.next();this.tests[e].run()},testDone:function(e){var t=this.depends[e.dispatcher.name],n,r;this.fireEvent(\"testDone\",{name:e.dispatcher.name,test:e.dispatcher,results:e.args.results});for(n=0;r=t[n];n++){if(!r)continue;this.stack.push(r)}this.results[e.dispatcher.name]=e.dispatcher.results,this.next()},testFailed:function(e){var t=this.depends[e.dispatcher.name],n,r;this.fireEvent(\"testFail\",{name:e.dispatcher.name,test:e.dispatcher,results:e.args.results});for(n=0;r=t[n];n++)this.tests[r].done(!1,\"dependancy failed: \"+r);this.results[e.dispatcher.name]=e.dispatcher.results,this.next()},registerReporter:function(e){var t=n?e:e.handleEvent;this.addEvents({testStart:t,testDone:t,testFail:t,done:t})}},Bromine.fireEvent=function(t,n){var r;document.createEventObject?(r=s(),t.fireEvent(\"on\"+n,r)):(r=document.createEvent(\"HTMLEvents\"),r.initEvent(n,!0,!0),t.dispatchEvent(r))},Bromine.fireMouseEvent=function(e,n,r){r||(r={});var i,o=t.calculateOffsets(e),u=\"details\"in r?r.details:1,a=\"x\"in r?r.x:o.left,f=\"y\"in r?r.y:o.top,l=\"button\"in r?r.button:0;document.createEvent?(i=document.createEvent(\"MouseEvents\"),i.initMouseEvent(n,!0,!0,window,u,a,f,a,f,r.ctrl,r.alt,r.shift,r.meta,l,r.relatedTarget),e.dispatchEvent(i)):(i=s(),i.screenX=a,i.screenY=f,i.clientX=a,i.clientY=f,i.ctrlKey=r.ctrl,i.altKey=r.alt,i.shiftKey=r.shift,i.metaKey=r.meta,i.button=l,i.relatedTarget=r.relatedTarget,i.detail=u,e.fireEvent(\"on\"+n,i))},Bromine.fireKeyboardEvent=function(e,t,n){var r;n||(n={}),document.createEvent?(r=document.createEvent(\"KeyboardEvent\"),r.initKeyEvent(t,!0,!0,null,n.ctrl,n.alt,n.shift,n.meta,n.key,n.charCode),e.dispatchEvent(r)):(r=s(),r.ctrlKey=n.ctrl,r.altKey=n.alt,r.shiftKey=n.shift,r.metaKey=n.meta,r.keyCode=n.key,r.charCode=n.charCode,e.fireEvent(\"on\"+t,r))},Bromine.fireEventWithDelay=function(t,n,r,i){var s=i||500;Bromine.fireEvent(t,n),window.setTimeout(r,s)},Bromine.Tester=i,Bromine.Test=r}.apply(Bromine,[Bromine,Bromine.utils]),!function(){function e(){}e.prototype={constructor:e,handleEvent:function(e){var t=this[e.type];switch(e.type){case\"done\":t(e.args.results);break;case\"testStart\":t(e.args.name,e.args.test);break;default:t(e.args.name,e.args.results,e.args.test)}},done:function(e,t){console.log(\"Test Runner Done\",[e,t])},testStart:function(e,t){console.log(\"Test Start\",[e,res])},testDone:function(e,t,n){console.log(\"Test Done\",[e,t])},testFail:function(e,t,n){console.log(\"Test Fail\",[e,t])}},Bromine.Reporter=e}.call(Bromine);",
+            "class": "Events",
+            "module": "Bromine"
+        },
         {
             "file": "lib/Events/Events.js",
             "line": 35,
@@ -490,7 +1276,14 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 28,
+            "line": 1,
+            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
+            "class": "Bromine.Test",
+            "module": "Events"
+        },
+        {
+            "file": "src/Bromine.js",
+            "line": 43,
             "description": "holds a stack of reported results",
             "itemtype": "property",
             "name": "results",
@@ -500,7 +1293,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 45,
+            "line": 60,
             "description": "fires when test starts running. Latched",
             "itemtype": "event",
             "name": "start",
@@ -509,7 +1302,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 49,
+            "line": 64,
             "description": "fires if and when the test has finished running successfuly",
             "itemtype": "event",
             "name": "done",
@@ -517,12 +1310,14 @@
                 {
                     "name": "args",
                     "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "results",
-                    "description": "the results of the test",
-                    "type": "Array"
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "results",
+                            "description": "the results of the test",
+                            "type": "Array"
+                        }
+                    ]
                 }
             ],
             "class": "Bromine.Test",
@@ -530,7 +1325,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 55,
+            "line": 70,
             "description": "fires if and when the test has finished running but failed",
             "itemtype": "event",
             "name": "fail",
@@ -538,12 +1333,14 @@
                 {
                     "name": "args",
                     "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "results",
-                    "description": "the results of the test",
-                    "type": "Array"
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "results",
+                            "description": "the results of the test",
+                            "type": "Array"
+                        }
+                    ]
                 }
             ],
             "class": "Bromine.Test",
@@ -551,7 +1348,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 61,
+            "line": 76,
             "description": "fires on object destruction",
             "itemtype": "event",
             "name": "destory",
@@ -560,7 +1357,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 76,
+            "line": 91,
             "description": "runs the tests",
             "itemtype": "method",
             "name": "run",
@@ -569,7 +1366,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 86,
+            "line": 101,
             "description": "logs a result to the test",
             "itemtype": "method",
             "name": "log",
@@ -585,7 +1382,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 95,
+            "line": 110,
             "description": "Called when tests are done",
             "itemtype": "method",
             "name": "done",
@@ -607,7 +1404,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 116,
+            "line": 131,
             "description": "signifies a test failure. Will stop any more steps from running",
             "itemtype": "method",
             "name": "",
@@ -624,7 +1421,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 154,
+            "line": 169,
             "description": "calls the next function in the stack",
             "itemtype": "method",
             "name": "next",
@@ -633,7 +1430,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 168,
+            "line": 183,
             "description": "calls the current function in the stack",
             "itemtype": "method",
             "name": "current",
@@ -642,7 +1439,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 179,
+            "line": 194,
             "description": "calls the previous function in the stack",
             "itemtype": "method",
             "name": "prev",
@@ -651,7 +1448,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 222,
+            "line": 237,
             "description": "fires when a test starts running",
             "itemtype": "event",
             "name": "start",
@@ -678,7 +1475,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 229,
+            "line": 244,
             "description": "fires when all tests are done",
             "itemtype": "event",
             "name": "done",
@@ -700,7 +1497,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 235,
+            "line": 250,
             "description": "fires when a test is done successfuly",
             "itemtype": "event",
             "name": "testDone",
@@ -732,7 +1529,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 243,
+            "line": 258,
             "description": "fires when a test is done but failed",
             "itemtype": "event",
             "name": "testFAil",
@@ -764,7 +1561,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 258,
+            "line": 273,
             "description": "register a test",
             "itemtype": "method",
             "name": "registerTest",
@@ -785,7 +1582,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 289,
+            "line": 304,
             "description": "returns the tests stack",
             "itemtype": "method",
             "name": "getTests",
@@ -798,7 +1595,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 298,
+            "line": 313,
             "description": "starts running tests",
             "itemtype": "method",
             "name": "run",
@@ -807,7 +1604,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 308,
+            "line": 323,
             "description": "resets test runner",
             "itemtype": "method",
             "name": "reset",
@@ -816,7 +1613,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 368,
+            "line": 383,
             "description": "registers a Test reporter",
             "itemtype": "method",
             "name": "registerReporter",
@@ -831,7 +1628,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 395,
+            "line": 410,
             "description": "Dispatches a DOM event on a given element",
             "itemtype": "method",
             "name": "fireEvent",
@@ -853,7 +1650,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 418,
+            "line": 433,
             "description": "Fires a mouse event on element\n\nAdditional parameters can be:\n \n x, y, details, button, ctrl, alt, shift, meta, relatedTarget\n\n if no x/y supplied, will use element position",
             "itemtype": "method",
             "name": "fireMouseEvent",
@@ -880,7 +1677,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 467,
+            "line": 482,
             "description": "Fires a keyboard event on element\n\nAdditional parameters can be:\n \n ctrl, alt, shift, meta, key, charCode",
             "itemtype": "method",
             "name": "fireKeyboardEvent",
@@ -907,7 +1704,7 @@
         },
         {
             "file": "src/Bromine.js",
-            "line": 503,
+            "line": 518,
             "description": "Dispatches a DOM event on an element, then dispatches a callback after given delay",
             "itemtype": "method",
             "name": "fireEventWithDelay",
@@ -940,8 +1737,15 @@
             "module": "Bromine"
         },
         {
+            "file": "src/license.js",
+            "line": 1,
+            "description": "Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n  http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
+            "class": "Bind",
+            "module": "Bromine"
+        },
+        {
             "file": "src/utils.js",
-            "line": 14,
+            "line": 28,
             "description": "collection of bound function",
             "itemtype": "property",
             "name": "bound",
@@ -953,7 +1757,7 @@
         },
         {
             "file": "src/utils.js",
-            "line": 47,
+            "line": 61,
             "itemtype": "method",
             "name": "setOptions",
             "params": [
@@ -969,7 +1773,7 @@
         },
         {
             "file": "src/utils.js",
-            "line": 66,
+            "line": 80,
             "description": "calculates the offsets of an element relevant to one of it's parent",
             "itemtype": "method",
             "name": "calculateOffsets",

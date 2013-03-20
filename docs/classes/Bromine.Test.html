@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bromine.Test - Chegg eReader</title>
+    <title>Bromine.Test - Bromine Docs</title>
     <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.1&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
@@ -15,7 +15,7 @@
     <div id="hd" class="yui3-g header">
         <div class="yui3-u-3-4">
             
-                <h1><img src="..&#x2F;assets/css/logo.png" title="Chegg eReader"></h1>
+                <h1><img src="..&#x2F;assets/css/logo.png" title="Bromine Docs"></h1>
             
         </div>
         <div class="yui3-u-1-4 version">
@@ -117,7 +117,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l6"><code>src&#x2F;Bromine.js:6</code></a>
+            Defined in: <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l20"><code>src&#x2F;Bromine.js:20</code></a>
         </div>
     
 
@@ -152,12 +152,6 @@
                     
                 </li>
             
-                <li class="arg">
-                    
-                        <code>[options.fail_timeout=10</code>
-                    
-                </li>
-            
             </ul><span class="paren">)</span>
         </div>
     
@@ -187,7 +181,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l6"><code>src&#x2F;Bromine.js:6</code></a>
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l20"><code>src&#x2F;Bromine.js:20</code></a>
         
         </p>
 
@@ -230,7 +224,21 @@
                                 
 
                                 <div class="param-description">
-                                    <p>a function to execute before tests start</p>
+                                    <p>a function to execute before test start</p>
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[destroy]</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>a function to execute after the test ends (should be used for cleanup)</p>
                                 </div>
 
                                 
@@ -264,22 +272,21 @@
                                 
                             </li>
                             
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[fail_timeout=10s]</code>
+                                    <span class="type">Integer</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>how much time to wait for tests to finish before reporting failure</p>
+                                </div>
+
+                                
+                            </li>
+                            
                         </ul>
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">[options.fail_timeout=10</code>
-                        <span class="type">Int</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>seconds] how much time to wait for tests to finish before reporting failure</p>
-                    </div>
-
                     
                 </li>
             
@@ -321,57 +328,15 @@
 
                     <ul class="index-list methods">
                         
-                            <li class="index-item method inherited">
-                                <a href="#method_addEvent">addEvent</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_addEventOnce">addEventOnce</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_addEvents">addEvents</a>
+                            <li class="index-item method">
+                                <a href="#method_next">next</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_current">current</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_done">done</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_fireEvent">fireEvent</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_fireLatchedEvent">fireLatchedEvent</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_log">log</a>
+                                <a href="#method_"></a>
 
                                 
                                 
@@ -385,14 +350,98 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_current">current</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_prev">prev</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method inherited">
+                            <li class="index-item method">
+                                <a href="#method_log">log</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_done">done</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_log">log</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_done">done</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_current">current</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_prev">prev</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_addEvent">addEvent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_addEvents">addEvents</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_fireEvent">fireEvent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited">
                                 <a href="#method_removeEvent">removeEvent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_addEventOnce">addEventOnce</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_fireLatchedEvent">fireLatchedEvent</a>
 
                                 
                                 
@@ -412,7 +461,14 @@
                                 
                             </li>
                         
-                            <li class="index-item method inherited">
+                            <li class="index-item method">
+                                <a href="#method_run">run</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited inherited">
                                 <a href="#method_setOptions">setOptions</a>
 
                                 
@@ -428,6 +484,13 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
+                        
+                            <li class="index-item property">
+                                <a href="#property_results">results</a>
+
+                                
+                                
+                            </li>
                         
                             <li class="index-item property">
                                 <a href="#property_results">results</a>
@@ -456,6 +519,20 @@
                             </li>
                         
                             <li class="index-item event">
+                                <a href="#event_destory">destory</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_done">done</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
                                 <a href="#event_done">done</a>
 
                                 
@@ -464,6 +541,20 @@
                         
                             <li class="index-item event">
                                 <a href="#event_fail">fail</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_fail">fail</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item event">
+                                <a href="#event_start">start</a>
 
                                 
                                 
@@ -484,6 +575,809 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_next" class="method item">
+    <h3 class="name"><code>next</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l169"><code>src&#x2F;Bromine.js:169</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>calls the next function in the stack</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_" class="method item">
+    <h3 class="name"><code></code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>message</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l131"><code>src&#x2F;Bromine.js:131</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>signifies a test failure. Will stop any more steps from running</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">message</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_next" class="method item">
+    <h3 class="name"><code>next</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l726"><code>bin&#x2F;bromine.js:726</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>calls the next function in the stack</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_current" class="method item">
+    <h3 class="name"><code>current</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l740"><code>bin&#x2F;bromine.js:740</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>calls the current function in the stack</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_prev" class="method item">
+    <h3 class="name"><code>prev</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l751"><code>bin&#x2F;bromine.js:751</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>calls the previous function in the stack</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_log" class="method item">
+    <h3 class="name"><code>log</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l101"><code>src&#x2F;Bromine.js:101</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>logs a result to the test</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_done" class="method item">
+    <h3 class="name"><code>done</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>state</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[message]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l110"><code>src&#x2F;Bromine.js:110</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Called when tests are done</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">state</code>
+                        <span class="type">Bool</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>whether test passed or failed</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[message]</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>only used on failure</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_log" class="method item">
+    <h3 class="name"><code>log</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l658"><code>bin&#x2F;bromine.js:658</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>logs a result to the test</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_done" class="method item">
+    <h3 class="name"><code>done</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>state</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[message]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l667"><code>bin&#x2F;bromine.js:667</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Called when tests are done</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">state</code>
+                        <span class="type">Bool</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>whether test passed or failed</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[message]</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>only used on failure</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_current" class="method item">
+    <h3 class="name"><code>current</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l183"><code>src&#x2F;Bromine.js:183</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>calls the current function in the stack</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_prev" class="method item">
+    <h3 class="name"><code>prev</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l194"><code>src&#x2F;Bromine.js:194</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>calls the previous function in the stack</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
 
                 
                     <div id="method_addEvent" class="method item inherited">
@@ -527,13 +1421,16 @@
 
     <div class="meta">
         
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;Events.html#method_addEvent">
+                Events
+            </a>
             
-                <p>Inherited from
-                <a href="..&#x2F;classes&#x2F;Events.html#method_addEvent">Events</a>:
+            but overwritten in
             
         
         
-        <a href="..&#x2F;files&#x2F;lib_Events_Events.js.html#l276"><code>lib&#x2F;Events&#x2F;Events.js:276</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l290"><code>bin&#x2F;bromine.js:290</code></a>
         
         </p>
 
@@ -545,113 +1442,6 @@
 
     <div class="description">
         <p>Adds an event</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">the</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>event type</p>
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">a</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>function to add</p>
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_addEventOnce" class="method item inherited">
-    <h3 class="name"><code>addEventOnce</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>the</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>a</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag chainable">chainable</span>
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="..&#x2F;classes&#x2F;Events.html#method_addEventOnce">Events</a>:
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;lib_Events_Events.js.html#l387"><code>lib&#x2F;Events&#x2F;Events.js:387</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Adds an event for one execution, then removes it</p>
     </div>
 
     
@@ -735,13 +1525,16 @@
 
     <div class="meta">
         
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;Events.html#method_addEvents">
+                Events
+            </a>
             
-                <p>Inherited from
-                <a href="..&#x2F;classes&#x2F;Events.html#method_addEvents">Events</a>:
+            but overwritten in
             
         
         
-        <a href="..&#x2F;files&#x2F;lib_Events_Events.js.html#l306"><code>lib&#x2F;Events&#x2F;Events.js:306</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l320"><code>bin&#x2F;bromine.js:320</code></a>
         
         </p>
 
@@ -771,169 +1564,6 @@
 
                     <div class="param-description">
                         <p>object of event types => callbacks</p>
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_current" class="method item">
-    <h3 class="name"><code>current</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l168"><code>src&#x2F;Bromine.js:168</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>calls the current function in the stack</p>
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_done" class="method item">
-    <h3 class="name"><code>done</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>state</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code class="optional">[message]</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l95"><code>src&#x2F;Bromine.js:95</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Called when tests are done</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">state</code>
-                        <span class="type">Bool</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>whether test passed or failed</p>
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name optional">[message]</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>only used on failure</p>
                     </div>
 
                     
@@ -990,13 +1620,16 @@
 
     <div class="meta">
         
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;Events.html#method_fireEvent">
+                Events
+            </a>
             
-                <p>Inherited from
-                <a href="..&#x2F;classes&#x2F;Events.html#method_fireEvent">Events</a>:
+            but overwritten in
             
         
         
-        <a href="..&#x2F;files&#x2F;lib_Events_Events.js.html#l325"><code>lib&#x2F;Events&#x2F;Events.js:325</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l339"><code>bin&#x2F;bromine.js:339</code></a>
         
         </p>
 
@@ -1056,308 +1689,6 @@
 </div>
 
                 
-                    <div id="method_fireLatchedEvent" class="method item inherited">
-    <h3 class="name"><code>fireLatchedEvent</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>the</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>arguments</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag chainable">chainable</span>
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="..&#x2F;classes&#x2F;Events.html#method_fireLatchedEvent">Events</a>:
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;lib_Events_Events.js.html#l409"><code>lib&#x2F;Events&#x2F;Events.js:409</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Fires a latched event</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">the</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>event type</p>
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">arguments</code>
-                        <span class="type">Mixed</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>to pass with the event</p>
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_log" class="method item">
-    <h3 class="name"><code>log</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>params</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l86"><code>src&#x2F;Bromine.js:86</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>logs a result to the test</p>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">params</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_next" class="method item">
-    <h3 class="name"><code>next</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l154"><code>src&#x2F;Bromine.js:154</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>calls the next function in the stack</p>
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_prev" class="method item">
-    <h3 class="name"><code>prev</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l179"><code>src&#x2F;Bromine.js:179</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>calls the previous function in the stack</p>
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="method_removeEvent" class="method item inherited">
     <h3 class="name"><code>removeEvent</code></h3>
 
@@ -1399,13 +1730,16 @@
 
     <div class="meta">
         
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;Events.html#method_removeEvent">
+                Events
+            </a>
             
-                <p>Inherited from
-                <a href="..&#x2F;classes&#x2F;Events.html#method_removeEvent">Events</a>:
+            but overwritten in
             
         
         
-        <a href="..&#x2F;files&#x2F;lib_Events_Events.js.html#l364"><code>lib&#x2F;Events&#x2F;Events.js:364</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l378"><code>bin&#x2F;bromine.js:378</code></a>
         
         </p>
 
@@ -1465,6 +1799,226 @@
 </div>
 
                 
+                    <div id="method_addEventOnce" class="method item inherited">
+    <h3 class="name"><code>addEventOnce</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>the</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>a</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;Events.html#method_addEventOnce">
+                Events
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l401"><code>bin&#x2F;bromine.js:401</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Adds an event for one execution, then removes it</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">the</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>event type</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">a</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>function to add</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_fireLatchedEvent" class="method item inherited">
+    <h3 class="name"><code>fireLatchedEvent</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>the</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>arguments</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;Events.html#method_fireLatchedEvent">
+                Events
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l423"><code>bin&#x2F;bromine.js:423</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Fires a latched event</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">the</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>event type</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">arguments</code>
+                        <span class="type">Mixed</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>to pass with the event</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_" class="method item">
     <h3 class="name"><code></code></h3>
 
@@ -1507,7 +2061,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l116"><code>src&#x2F;Bromine.js:116</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l688"><code>bin&#x2F;bromine.js:688</code></a>
         
         </p>
 
@@ -1584,7 +2138,61 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l76"><code>src&#x2F;Bromine.js:76</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l648"><code>bin&#x2F;bromine.js:648</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>runs the tests</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_run" class="method item">
+    <h3 class="name"><code>run</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l91"><code>src&#x2F;Bromine.js:91</code></a>
         
         </p>
 
@@ -1641,13 +2249,16 @@
 
     <div class="meta">
         
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;Options.html#method_setOptions">
+                Options
+            </a>
             
-                <p>Inherited from
-                <a href="..&#x2F;classes&#x2F;Options.html#method_setOptions">Options</a>:
+            but overwritten in
             
         
         
-        <a href="..&#x2F;files&#x2F;src_utils.js.html#l47"><code>src&#x2F;utils.js:47</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l506"><code>bin&#x2F;bromine.js:506</code></a>
         
         </p>
 
@@ -1676,7 +2287,7 @@
                     
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                     
@@ -1723,7 +2334,51 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l28"><code>src&#x2F;Bromine.js:28</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l600"><code>bin&#x2F;bromine.js:600</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>holds a stack of reported results</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_results" class="property item">
+    <h3 class="name"><code>results</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l43"><code>src&#x2F;Bromine.js:43</code></a>
         
         </p>
 
@@ -1777,7 +2432,50 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l61"><code>src&#x2F;Bromine.js:61</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l633"><code>bin&#x2F;bromine.js:633</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>fires on object destruction</p>
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_destory" class="events item">
+    <h3 class="name"><code>destory</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l76"><code>src&#x2F;Bromine.js:76</code></a>
         
         </p>
 
@@ -1820,7 +2518,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l49"><code>src&#x2F;Bromine.js:49</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l621"><code>bin&#x2F;bromine.js:621</code></a>
         
         </p>
 
@@ -1852,20 +2550,101 @@
                     </div>
 
                     
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                <code class="param-name">results</code>
+                                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+                                <div class="param-description">
+                                    <p>the results of the test</p>
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
                 </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_done" class="events item">
+    <h3 class="name"><code>done</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l64"><code>src&#x2F;Bromine.js:64</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>fires if and when the test has finished running successfuly</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
             
                 <li class="param">
                     
-                        <code class="param-name">results</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                        <code class="param-name">args</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>the results of the test</p>
+                         
                     </div>
 
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                <code class="param-name">results</code>
+                                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+                                <div class="param-description">
+                                    <p>the results of the test</p>
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
                     
                 </li>
             
@@ -1901,7 +2680,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l55"><code>src&#x2F;Bromine.js:55</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l627"><code>bin&#x2F;bromine.js:627</code></a>
         
         </p>
 
@@ -1933,20 +2712,101 @@
                     </div>
 
                     
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                <code class="param-name">results</code>
+                                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+                                <div class="param-description">
+                                    <p>the results of the test</p>
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
                 </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_fail" class="events item">
+    <h3 class="name"><code>fail</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l70"><code>src&#x2F;Bromine.js:70</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>fires if and when the test has finished running but failed</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
             
                 <li class="param">
                     
-                        <code class="param-name">results</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                        <code class="param-name">args</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>the results of the test</p>
+                         
                     </div>
 
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                <code class="param-name">results</code>
+                                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+                                <div class="param-description">
+                                    <p>the results of the test</p>
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
                     
                 </li>
             
@@ -1982,7 +2842,50 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l45"><code>src&#x2F;Bromine.js:45</code></a>
+        <a href="..&#x2F;files&#x2F;bin_bromine.js.html#l617"><code>bin&#x2F;bromine.js:617</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>fires when test starts running. Latched</p>
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_start" class="events item">
+    <h3 class="name"><code>start</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;src_Bromine.js.html#l60"><code>src&#x2F;Bromine.js:60</code></a>
         
         </p>
 
