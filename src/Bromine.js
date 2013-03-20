@@ -474,6 +474,11 @@
                                  clicks, x, y, x, y, 
                                  params.ctrl, params.alt, params.shift, params.meta, 
                                  button, params.relatedTarget);
+
+            if (params.delta) {
+                evt.wheelDelta = params.delta;
+            }
+
             element.dispatchEvent(evt);
         }else{
             evt = getIEEvent(); 
@@ -488,6 +493,10 @@
             evt.button = button;
             evt.relatedTarget = params.relatedTarget;
             evt.detail = clicks;
+
+            if (params.delta) {
+                evt.wheelDelta = params.delta;
+            }
 
             element.fireEvent('on'+type, evt);
         }
