@@ -12,7 +12,20 @@
    See the License for the specific language governing permissions and
    limitations under the License.   
  */
-!function(ns, utils){
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        var utils = require('Bromine/utils');
+
+        module.exports = factory(Events);
+
+    } else if (typeof define === 'function' && define.amd) {
+        define(['Bromine/utils'], function (utils) {
+            return factory(utils);
+        });
+    } else {
+        root.Bromine = factory(root.utils);
+    }
+}(this, function (utils) {
     /**
      * @module Bromine
      */
@@ -407,6 +420,8 @@
      * @class Bromine
      */
 
+    Bromine = window.Bromine || {};
+
     /**
      * Dispatches a DOM event on a given element
      * @method fireEvent
@@ -460,6 +475,11 @@
                                  clicks, x, y, x, y, 
                                  params.ctrl, params.alt, params.shift, params.meta, 
                                  button, params.relatedTarget);
+
+            if (params.delta) {
+                evt.wheelDelta = params.delta;
+            }
+
             element.dispatchEvent(evt);
         }else{
             evt = getIEEvent(); 
@@ -474,6 +494,10 @@
             evt.button = button;
             evt.relatedTarget = params.relatedTarget;
             evt.detail = clicks;
+
+            if (params.delta) {
+                evt.wheelDelta = params.delta;
+            }
 
             element.fireEvent('on'+type, evt);
         }
@@ -534,4 +558,6 @@
 
     Bromine.Tester = Tester;
     Bromine.Test = Test;
-}.apply(Bromine,[Bromine, Bromine.utils]);
+
+    return Bromine;
+}));
