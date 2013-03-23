@@ -129,6 +129,7 @@
         done : function(state, msg){
             this.tests_done = true;
 
+            this.cleanup();
             clearTimeout(this.timeout_handle);
 
             if (state === false){
@@ -148,6 +149,8 @@
          */
         fail : function(msg){
             this.tests_done = true;
+
+            this.cleanup();
             clearTimeout(this.timeout_handle);
 
             this.log({
@@ -161,6 +164,8 @@
 
             this.destroy();
         },
+
+        cleanup : function(){},
 
         destroy : function(){
             this.fireEvent('destroy');
